@@ -1,18 +1,18 @@
-import 'package:econmerac_app/controller/auth/success_signin_controller.dart';
+import 'package:econmerac_app/controller/auth/forget_password/success_reset_password_controller.dart';
 import 'package:econmerac_app/core/class/handling_data_request.dart';
 import 'package:econmerac_app/core/constant/app_theme.dart';
 import 'package:econmerac_app/view/widget/auth_widget/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class SuccessSignUpScreen extends StatelessWidget {
-  const SuccessSignUpScreen({super.key});
+class SuccessResetPasswordScreen extends StatelessWidget {
+  const SuccessResetPasswordScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    Get.put(SuccessSignInControllerImp());
+    Get.put(SuccessResetPasswordControllerImp());
     return Scaffold(
-      body: GetBuilder<SuccessSignInControllerImp>(
+      body: GetBuilder<SuccessResetPasswordControllerImp>(
           builder: (controller) => HandlingDataRequest(
               statusRequset: controller.statusRequest,
               widget: Container(
@@ -34,7 +34,7 @@ class SuccessSignUpScreen extends StatelessWidget {
                       height: 25,
                     ),
                     Text(
-                      "Account Created Succefully Now You Can Log In...",
+                      "Your Password Reseted Successfuly\n Now You Can Login With\n New Passsword",
                       textAlign: TextAlign.center,
                       style: authStyle.copyWith(fontSize: 15, color: grey),
                     ),
@@ -44,7 +44,7 @@ class SuccessSignUpScreen extends StatelessWidget {
                     CustomAuthButton(
                         title: 'Log In'.tr,
                         press: () {
-                          controller.goToSignUpVerifyCode();
+                          controller.goToLogin();
                         })
                   ],
                 ),

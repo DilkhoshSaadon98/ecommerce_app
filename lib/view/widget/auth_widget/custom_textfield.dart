@@ -80,14 +80,5 @@ class CustomTextFieldAuth extends StatelessWidget {
         });
   }
 
-  String? validateFields(String? field) {
-    // if (field == null || field.isEmpty) {
-    //   if (title == 'E-mail' &&
-    //       controller.text != null &&
-    //       !EmailValidator.validate(controller.text))
-    //     return 'Enter a valid E-mail'.tr;
-    //   return 'Field is required.';
-    // }
-    return null;
-  }
+
 }

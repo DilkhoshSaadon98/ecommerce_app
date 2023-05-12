@@ -24,3 +24,12 @@ TextStyle get authStyle {
     color: black,
   ));
 }
+
+TextStyle get homeStyle {
+  return GoogleFonts.righteous(
+      textStyle: TextStyle(
+    fontSize: 15,
+    fontWeight: FontWeight.w100,
+    color: black,
+  ));
+}

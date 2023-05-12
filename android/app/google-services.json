@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "416577135451",
+    "project_id": "ecommerce-app-b9a35",
+    "storage_bucket": "ecommerce-app-b9a35.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:416577135451:android:f88ef909ac81380492f07e",
+        "android_client_info": {
+          "package_name": "com.example.econmerac_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "416577135451-51ag3g1eg68i62pusa2i2201cmql1c0s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAb3cXKak_7a580UnVKO9IXImuYusVY2ns"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "416577135451-51ag3g1eg68i62pusa2i2201cmql1c0s.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "416577135451-4ivnnn72v389k6ve2acsuhj15c8t54l2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.econmeracApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

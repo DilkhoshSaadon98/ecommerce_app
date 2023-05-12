@@ -5,4 +5,9 @@ class AppImageAssets {
 
   //! Lottie Files :
   static const String logo = 'assets/lottie/login.json';
+  static const String loading = 'assets/lottie/loading.json';
+  static const String offline = 'assets/lottie/offline.json';
+  static const String server = 'assets/lottie/server.json';
+  static const String noData = 'assets/lottie/nodata.json';
+  static const String offers = 'assets/lottie/offers.json';
 }

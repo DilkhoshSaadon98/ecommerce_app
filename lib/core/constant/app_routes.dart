@@ -1,4 +1,5 @@
 class AppRoutes {
+  //? Auth Routes:
   static const String onBoadrding = '/onBoadrding';
   static const String loginScreen = '/login';
   static const String signupScreen = '/signup';
@@ -9,4 +10,6 @@ class AppRoutes {
   static const String successResetPasswordScreen = '/successResetPassword';
   static const String successSignUpScreen = '/successSignup';
   static const String checkEmailScreen = '/checkEmail';
+  //? Home Pages :
+  static const String homeScreen = '/homePage';
 }

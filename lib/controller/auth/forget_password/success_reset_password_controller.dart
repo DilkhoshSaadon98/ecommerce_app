@@ -2,20 +2,17 @@ import 'package:econmerac_app/core/class/status_request.dart';
 import 'package:econmerac_app/core/constant/app_routes.dart';
 import 'package:get/get.dart';
 
-abstract class SuccessSignInController extends GetxController {
-  checkEmail();
-  goToSignUpVerifyCode();
+abstract class SuccessResetPasswordController extends GetxController {
+  goToLogin();
 }
 
-class SuccessSignInControllerImp extends SuccessSignInController {
+class SuccessResetPasswordControllerImp extends SuccessResetPasswordController {
     StatusRequest statusRequest = StatusRequest.none;
   @override
-  goToSignUpVerifyCode() {
+  goToLogin() {
     Get.offAllNamed(AppRoutes.loginScreen);
   }
 
-  @override
-  checkEmail() {}
 
   @override
   void onInit() {
