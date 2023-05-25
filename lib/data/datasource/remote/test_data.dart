@@ -1,11 +1,11 @@
-import 'package:econmerac_app/core/constant/crud.dart';
-import 'package:econmerac_app/core/constant/link_api.dart';
+import 'package:ecommercecourse/core/class/crud.dart';
+import 'package:ecommercecourse/linkapi.dart';
 
 class TestData {
-  late Curd curd;
-  TestData(this.curd);
+  Crud crud;
+  TestData(this.crud);
   getData() async {
-    var response = await curd.postrequest(ApiLink.linkLogin, {});
+    var response = await crud.postData(AppLink.test, {});
     return response.fold((l) => l, (r) => r);
   }
 }

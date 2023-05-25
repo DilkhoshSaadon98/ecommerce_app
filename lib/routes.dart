@@ -1,28 +1,58 @@
-import 'package:econmerac_app/core/constant/app_routes.dart';
-import 'package:econmerac_app/core/middleware/my_middleware.dart';
-import 'package:econmerac_app/view/screen/auth/forget_password_ui/forget_password.dart';
-import 'package:econmerac_app/view/screen/auth/login_screen.dart';
-import 'package:econmerac_app/view/screen/auth/signup_screen.dart';
-import 'package:econmerac_app/view/screen/auth/success_signup_screen.dart';
-import 'package:econmerac_app/view/screen/auth/forget_password_ui/verfiy_code_screen.dart';
-import 'package:econmerac_app/view/screen/auth/forget_password_ui/reset_password_screen.dart';
-import 'package:econmerac_app/view/screen/auth/verify_code_signup_screen.dart';
-import 'package:econmerac_app/view/screen/home_screen.dart';
-import 'package:econmerac_app/view/screen/on_boarding_screen.dart';
+import 'package:ecommercecourse/core/constant/routes.dart';
+import 'package:ecommercecourse/core/middleware/mymiddleware.dart';
+import 'package:ecommercecourse/view/screen/address/add.dart';
+import 'package:ecommercecourse/view/screen/address/adddetails.dart';
+import 'package:ecommercecourse/view/screen/address/view.dart';
+import 'package:ecommercecourse/view/screen/auth/forgetpassword/forgetpassword.dart';
+import 'package:ecommercecourse/view/screen/auth/login.dart';
+import 'package:ecommercecourse/view/screen/auth/forgetpassword/resetpassword.dart';
+import 'package:ecommercecourse/view/screen/auth/signup.dart';
+import 'package:ecommercecourse/view/screen/auth/forgetpassword/success_resetpassword.dart';
+import 'package:ecommercecourse/view/screen/auth/success_signup.dart';
+import 'package:ecommercecourse/view/screen/auth/forgetpassword/verifycode.dart';
+import 'package:ecommercecourse/view/screen/auth/verifycodesignup.dart';
+import 'package:ecommercecourse/view/screen/cart.dart';
+import 'package:ecommercecourse/view/screen/checkout.dart'; 
+import 'package:ecommercecourse/view/main_screen.dart';
+import 'package:ecommercecourse/view/screen/items_screen.dart';
+import 'package:ecommercecourse/view/screen/language.dart';
+import 'package:ecommercecourse/view/screen/myfavorite.dart';
+import 'package:ecommercecourse/view/screen/on_boarding/onboarding.dart';
+import 'package:ecommercecourse/view/screen/orders/archive.dart';
+import 'package:ecommercecourse/view/screen/orders/details.dart';
+import 'package:ecommercecourse/view/screen/orders/pending.dart';
+import 'package:ecommercecourse/view/screen/product_details_screen.dart';
 import 'package:get/get.dart';
 
-import 'view/screen/auth/forget_password_ui/success-reset_password_screen.dart';
-
 List<GetPage<dynamic>>? routes = [
-  GetPage(name: '/', page: ()=>const OnBoardingScreen(),middlewares: [MyMiddleWare()]),
-
-  GetPage(name: AppRoutes.loginScreen, page: ()=>const LoginScreen()),
-  GetPage(name: AppRoutes.signupScreen, page: ()=>const SignUpScreen()),
-  GetPage(name: AppRoutes.vrifyCodeScreen, page: ()=>const VerfiyCodeScreen()),
-  GetPage(name: AppRoutes.vrifyCodeSignUpScreen, page: ()=>const VerifyCodeSignUpScreen()),
-  GetPage(name: AppRoutes.resetPasswordScreen, page: ()=>const ResetPasswordScreen()),
-  GetPage(name: AppRoutes.forgetPasswordScreen, page: ()=>const ForgetPasswordScreen()),
-  GetPage(name: AppRoutes.successResetPasswordScreen, page: ()=>const SuccessResetPasswordScreen()),
-  GetPage(name: AppRoutes.successSignUpScreen, page: ()=>const SuccessSignUpScreen()),
-  GetPage(name: AppRoutes.homeScreen, page: ()=>const HomeScreen()),
+  GetPage(
+      name: "/", page: () => const Language(), middlewares: [MyMiddleWare()]),
+  GetPage(name: AppRoute.cart, page: () => const Cart()),
+//  Auth
+  GetPage(name: AppRoute.login, page: () => const Login()),
+  GetPage(name: AppRoute.signUp, page: () => const SignUp()),
+  GetPage(name: AppRoute.forgetPassword, page: () => const ForgetPassword()),
+  GetPage(name: AppRoute.verfiyCode, page: () => const VerfiyCode()),
+  GetPage(name: AppRoute.resetPassword, page: () => const ResetPassword()),
+  GetPage(
+      name: AppRoute.successResetpassword,
+      page: () => const SuccessResetPassword()),
+  GetPage(name: AppRoute.successSignUp, page: () => const SuccessSignUp()),
+  GetPage(name: AppRoute.onBoarding, page: () => const OnBoarding()),
+  GetPage(
+      name: AppRoute.verfiyCodeSignUp, page: () => const VerfiyCodeSignUp()),
+  //
+  GetPage(name: AppRoute.homepage, page: () => const HomeScreen()),
+  GetPage(name: AppRoute.items, page: () => const ItemsScreen()),
+  GetPage(name: AppRoute.productdetails, page: () => const ProductDetails()),
+  GetPage(name: AppRoute.myfavroite, page: () => const MyFavorite()),
+  //
+  GetPage(name: AppRoute.addressview, page: () => const AddressView()),
+  GetPage(name: AppRoute.addressadd, page: () => const AddressAdd()),
+  GetPage(name: AppRoute.checkout, page: () => const Checkout()),
+  GetPage(name: AppRoute.orderspending, page: () => const OrdersPending()),
+  GetPage(name: AppRoute.ordersarchive, page: () => const OrdersArchiveView()),
+  GetPage(name: AppRoute.ordersdetails, page: () => const OrdersDetails()),
+  GetPage(
+      name: AppRoute.addressadddetails, page: () => const AddressAddDetails()), 
 ];

@@ -1,8 +1,8 @@
-import 'package:econmerac_app/core/class/status_request.dart';
-import 'package:econmerac_app/core/constant/app_routes.dart';
-import 'package:econmerac_app/core/functions/handling_data.dart';
-import 'package:econmerac_app/data/datasource/remote/auth/signup.dart';
-import 'package:flutter/material.dart';
+import 'package:ecommercecourse/core/class/statusrequest.dart';
+import 'package:ecommercecourse/core/constant/routes.dart';
+import 'package:ecommercecourse/core/functions/handingdatacontroller.dart';
+import 'package:ecommercecourse/data/datasource/remote/auth/signup.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 abstract class SignUpController extends GetxController {
@@ -11,67 +11,65 @@ abstract class SignUpController extends GetxController {
 }
 
 class SignUpControllerImp extends SignUpController {
-  GlobalKey<FormState> formState = GlobalKey<FormState>();
-  late TextEditingController emailController;
-  late TextEditingController passwordController;
-  late TextEditingController phoneController;
-  late TextEditingController usernameController;
+  GlobalKey<FormState> formstate = GlobalKey<FormState>();
+
+  late TextEditingController username;
+  late TextEditingController email;
+  late TextEditingController phone;
+  late TextEditingController password;
+
+   StatusRequest statusRequest = StatusRequest.none;
+
+  SignupData signupData = SignupData(Get.find());
+
   List data = [];
-  StatusRequest statusRequest = StatusRequest.none;
-  bool fieldState = true;
-  void isVisible() {
-    fieldState = !fieldState;
-    update();
-  }
-
-  @override
-  goToSignIn() {
-    Get.offNamed(AppRoutes.loginScreen);
-  }
-
-  SignUpData signupData = SignUpData(Get.find());
 
   @override
   signUp() async {
-    var formData = formState.currentState;
-    if (formData!.validate()) {
-      statusRequest = StatusRequest.loading;
-      update();
-      var response = await signupData.postData(
-          usernameController.text.trim(),
-          passwordController.text.trim(),
-          emailController.text.trim(),
-          phoneController.text.trim());
+    if (formstate.currentState!.validate()) {
+      statusRequest = StatusRequest.loading; 
+      update() ; 
+      var response = await signupData.postdata(
+          username.text, password.text, email.text, phone.text);
+      print("=============================== Controller $response ");
       statusRequest = handlingData(response);
       if (StatusRequest.success == statusRequest) {
-        if (response['status'] == 'success') {
-          Get.offNamed(AppRoutes.vrifyCodeSignUpScreen  ,arguments: {'email': emailController.text.trim()});
+        if (response['status'] == "success") {
+          // data.addAll(response['data']);
+          Get.offNamed(AppRoute.verfiyCodeSignUp  ,arguments: {
+            "email" : email.text
+          });
         } else {
-          Get.defaultDialog(
-              title: 'Warning',
-              middleText: 'Email or Phone Number is Already Exist.');
+          Get.defaultDialog(title: "ُWarning" , middleText: "Phone Number Or Email Already Exists") ; 
           statusRequest = StatusRequest.failure;
         }
       }
       update();
+    } else {
+      
     }
   }
 
   @override
+  goToSignIn() {
+    Get.offNamed(AppRoute.login);
+  }
+
+  @override
   void onInit() {
-    emailController = TextEditingController();
-    passwordController = TextEditingController();
-    phoneController = TextEditingController();
-    usernameController = TextEditingController();
+    username = TextEditingController();
+    phone = TextEditingController();
+    email = TextEditingController();
+    password = TextEditingController();
     super.onInit();
   }
 
   @override
   void dispose() {
-    emailController.dispose();
-    passwordController.dispose();
-    phoneController.dispose();
-    usernameController.dispose();
+    username.dispose();
+    email.dispose();
+    phone.dispose();
+    password.dispose();
     super.dispose();
   }
 }

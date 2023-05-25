@@ -1,11 +1,6 @@
 class OnBoardingModel {
-  String? title;
-  String? image;
-  String? body;
-
-  OnBoardingModel({
-    required this.title,
-    required this.image,
-    required this.body,
-  });
+  final String? title;
+  final String? image;
+  final String? body;
+  OnBoardingModel({this.body, this.title, this.image});
 }
