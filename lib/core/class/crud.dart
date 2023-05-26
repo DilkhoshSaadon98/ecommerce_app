@@ -20,6 +20,5 @@ class Crud {
       } else {
         return const Left(StatusRequest.offlinefailure);
       }
-     
   }
 }

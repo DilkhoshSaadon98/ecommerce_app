@@ -28,7 +28,7 @@ class AddressView extends StatelessWidget {
                 return CardAddress(
                   addressModel: controller.data[i],
                   onDelete: () {
-                    controller.deleteAddress(controller.data[i].addressId!);
+                    controller.deleteAddress(controller.data[i].addressId!.toString());
                   },
                 );
               },

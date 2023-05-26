@@ -1,6 +1,5 @@
 import 'package:ecommercecourse/controller/address/add_controller.dart';
 import 'package:ecommercecourse/core/class/handlingdataview.dart';
-import 'package:ecommercecourse/core/constant/color.dart'; 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -18,7 +17,8 @@ class AddressAdd extends StatelessWidget {
       body: GetBuilder<AddAddressController>(
           builder: ((controllerpage) => HandlingDataView(
               statusRequest: controllerpage.statusRequest,
-              widget: Column(children: [
+              widget: 
+              Column(children: [
                 if (controllerpage.kGooglePlex != null)
                   Expanded(
                       child: Stack(
@@ -36,22 +36,11 @@ class AddressAdd extends StatelessWidget {
                               .complete(controllermap);
                         },
                       ),
-                      Positioned(
-                        bottom: 10,
-                        child: MaterialButton(
-                          minWidth: 200,
-                          onPressed: () {
-                            controllerpage.goToPageAddDetailsAddress();
-                          },
-                          color: AppColor.primaryColor,
-                          textColor: Colors.white,
-                          child:
-                              const Text("اكمال", style: TextStyle(fontSize: 18)),
-                        ),
-                      )
+                      
                     ],
                   ))
-              ])))),
+              ])
+              ))),
     );
   }
 }

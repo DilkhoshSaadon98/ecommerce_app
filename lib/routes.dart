@@ -1,8 +1,8 @@
 import 'package:ecommercecourse/core/constant/routes.dart';
 import 'package:ecommercecourse/core/middleware/mymiddleware.dart';
-import 'package:ecommercecourse/view/screen/address/add.dart';
-import 'package:ecommercecourse/view/screen/address/adddetails.dart';
-import 'package:ecommercecourse/view/screen/address/view.dart';
+import 'package:ecommercecourse/view/screen/address/add_address.dart';
+import 'package:ecommercecourse/view/screen/address/add_details_address.dart';
+import 'package:ecommercecourse/view/screen/address/view_address.dart';
 import 'package:ecommercecourse/view/screen/auth/forgetpassword/forgetpassword.dart';
 import 'package:ecommercecourse/view/screen/auth/login.dart';
 import 'package:ecommercecourse/view/screen/auth/forgetpassword/resetpassword.dart';
