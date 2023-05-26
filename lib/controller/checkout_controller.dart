@@ -46,8 +46,6 @@ class CheckoutController extends GetxController {
     var response = await addressData
         .getData(myServices.sharedPreferences.getString("id")!);
 
-    print("=============================== Controller $response ");
-
     statusRequest = handlingData(response);
 
     if (StatusRequest.success == statusRequest) {
@@ -87,8 +85,6 @@ class CheckoutController extends GetxController {
     };
 
     var response = await checkoutData.checkout(data);
-
-    print("=============================== Controller $response ");
 
     statusRequest = handlingData(response);
 

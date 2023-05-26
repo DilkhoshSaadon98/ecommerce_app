@@ -1,4 +1,5 @@
 import 'package:ecommercecourse/controller/auth/successsignup_controller.dart';
+import 'package:ecommercecourse/core/constant/apptheme.dart';
 import 'package:ecommercecourse/core/constant/color.dart';
 import 'package:ecommercecourse/view/widget/auth/custombuttonauth.dart';
 import 'package:flutter/material.dart';
@@ -32,9 +33,7 @@ class SuccessSignUp extends StatelessWidget {
             color: AppColor.primaryColor,
           )),
           Text("37".tr,
-              style: Theme.of(context)
-                  .textTheme
-                  .headline1!
+              style: titleStyle
                   .copyWith(fontSize: 30)),
           Text("38".tr),
           const Spacer(),

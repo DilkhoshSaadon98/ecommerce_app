@@ -17,7 +17,8 @@ class CustomListItems extends GetView<ItemsControllerImp> {
 
   @override
   Widget build(BuildContext context) {
-   //! Get.put(ItemsControllerImp());
+    bool isDiscount = itemsModel.itemsDiscount == 0 ? true : false;
+    //! Get.put(ItemsControllerImp());
     return InkWell(
         onTap: () {
           controller.goToPageProductDetails(itemsModel);
@@ -71,8 +72,31 @@ class CustomListItems extends GetView<ItemsControllerImp> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text("${itemsModel.itemsPrice} \$",
-                              style: titleStyle),
+                          SizedBox(
+                            height: 40,
+                            child: Stack(
+                              children: [
+                                Text("${itemsModel.itemsPriceDiscount} \$",
+                                    style: titleStyle.copyWith(
+                                      color: AppColor.primaryColor,
+                                    )),
+                                isDiscount != true
+                                    ? Positioned(
+                                        bottom: -5,
+                                        child: Text(
+                                            "${itemsModel.itemsPrice} \$",
+                                            style: titleStyle.copyWith(
+                                                color: isDiscount != true
+                                                    ? Colors.red
+                                                    : AppColor.black,
+                                                decoration: isDiscount != true
+                                                    ? TextDecoration.lineThrough
+                                                    : TextDecoration.none)),
+                                      )
+                                    : Container()
+                              ],
+                            ),
+                          ),
                           GetBuilder<FavoriteController>(
                               builder: (controller) => IconButton(
                                   onPressed: () {
@@ -102,14 +126,15 @@ class CustomListItems extends GetView<ItemsControllerImp> {
                     ]),
               ),
               // ignore: unrelated_type_equality_checks
-              if (itemsModel.itemsDiscount != "0")
-                Positioned(
-                    top: 4,
-                    left: 4,
-                    child: Image.asset(
-                      AppImageAsset.saleOne,
-                      width: 40,
-                    ))
+              isDiscount != true
+                  ? Positioned(
+                      top: 4,
+                      left: 4,
+                      child: Image.asset(
+                        AppImageAsset.saleOne,
+                        width: 30,
+                      ))
+                  : Container()
             ],
           ),
         ));

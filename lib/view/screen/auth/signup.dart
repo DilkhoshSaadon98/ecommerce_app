@@ -1,5 +1,6 @@
 import 'package:ecommercecourse/controller/auth/signup_controller.dart';
-import 'package:ecommercecourse/core/class/handlingdataview.dart'; 
+import 'package:ecommercecourse/core/class/handlingdataview.dart';
+import 'package:ecommercecourse/core/constant/apptheme.dart'; 
 import 'package:ecommercecourse/core/constant/color.dart';
 import 'package:ecommercecourse/core/functions/alertexitapp.dart';
 import 'package:ecommercecourse/core/functions/validinput.dart';
@@ -23,9 +24,7 @@ class SignUp extends StatelessWidget {
         backgroundColor: AppColor.backgroundcolor,
         elevation: 0.0,
         title: Text('17'.tr,
-            style: Theme.of(context)
-                .textTheme
-                .headline1!
+            style: titleStyle
                 .copyWith(color: AppColor.grey)),
       ),
       body: WillPopScope(

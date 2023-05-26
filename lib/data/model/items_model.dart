@@ -9,6 +9,7 @@ class ItemsModel {
   int? itemsActive;
   int? itemsPrice;
   int? itemsCat;
+  int? itemsPriceDiscount;
   int? itemsDiscount;
   int? categoriesId;
   String? categoriesName;
@@ -28,6 +29,7 @@ class ItemsModel {
       this.itemsActive,
       this.itemsPrice,
       this.itemsCat,
+      this.itemsPriceDiscount,
       this.itemsDiscount,
       this.categoriesId,
       this.categoriesName,
@@ -47,6 +49,7 @@ class ItemsModel {
     itemsActive = json['items_active'];
     itemsPrice = json['items_price'];
     itemsCat = json['items_cat'];
+    itemsPriceDiscount = json['items_pricedisount'];
     itemsDiscount = json['items_discount'];
     categoriesId = json['catagories_id'];
     categoriesName = json['catagories_name'];
@@ -68,6 +71,7 @@ class ItemsModel {
     data['items_active'] = this.itemsActive;
     data['items_price'] = this.itemsPrice;
     data['items_cat'] = this.itemsCat;
+    data['items_pricedisount'] = this.itemsPriceDiscount;
     data['items_discount'] = this.itemsDiscount;
     data['categories_id'] = this.categoriesId;
     data['categories_name'] = this.categoriesName;

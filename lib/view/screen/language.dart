@@ -1,3 +1,4 @@
+import 'package:ecommercecourse/core/constant/apptheme.dart';
 import 'package:ecommercecourse/core/constant/routes.dart';
 import 'package:ecommercecourse/core/localization/changelocal.dart';
 import 'package:ecommercecourse/view/widget/language/custombuttomlang.dart';
@@ -15,7 +16,7 @@ class Language extends GetView<LocaleController> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("1".tr, style: Theme.of(context).textTheme.headline1),
+              Text("1".tr, style: titleStyle),
               const SizedBox(height: 20),
               CustomButtonLang(
                   textbutton: "Ar",

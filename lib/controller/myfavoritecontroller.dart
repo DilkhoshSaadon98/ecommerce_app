@@ -14,6 +14,7 @@ class MyFavoriteController extends SearchMixController {
 
   List<MyFavoriteModel> data = [];
 
+  @override
   late StatusRequest statusRequest;
 
   MyServices myServices = Get.find();

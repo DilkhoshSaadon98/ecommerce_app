@@ -1,7 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:ecommercecourse/core/constant/color.dart';
-import 'package:ecommercecourse/core/constant/imgaeasset.dart';
-import 'package:ecommercecourse/data/model/items_model.dart';
+import 'package:ecommercecourse/core/constant/apptheme.dart';
 import 'package:ecommercecourse/linkapi.dart';
 import 'package:flutter/material.dart';
 
@@ -25,41 +23,38 @@ class CustomItemsCartList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      child: Container(
-        child: Row(children: [
-          Expanded(
-              flex: 2,
-              child: CachedNetworkImage(
-                imageUrl: "${AppLink.imagestItems}/$imagename",
-                height: 80,
-              )),
-          Expanded(
-              flex: 3,
-              child: ListTile(
-                title: Text(name, style: TextStyle(fontSize: 15)),
-                subtitle: Text(price,
-                    style:
-                        TextStyle(color: AppColor.primaryColor, fontSize: 17)),
-              )),
-          Expanded(
-              child: Column(
-            children: [
-              Container(
-                  height: 35,
-                  child: IconButton(onPressed: onAdd, icon: Icon(Icons.add))),
-              Container(
-                  height: 30,
-                  child: Text(
-                    count,
-                    style: TextStyle(fontFamily: "sans"),
-                  )),
-              Container(
-                  height: 25,
-                  child: IconButton(onPressed: onRemove, icon: Icon(Icons.remove)))
-            ],
-          ))
-        ]),
-      ),
+      child: Row(children: [
+        Expanded(
+            flex: 2,
+            child: CachedNetworkImage(
+              imageUrl: "${AppLink.imagestItems}/$imagename",
+              height: 80,
+            )),
+        Expanded(
+            flex: 3,
+            child: ListTile(
+              title: Text(name, style: titleStyle),
+              subtitle: Text(price,
+                  style:titleStyle),
+            )),
+        Expanded(
+            child: Column(
+          children: [
+            SizedBox(
+                height: 35,
+                child: IconButton(onPressed: onAdd, icon: const Icon(Icons.add))),
+            SizedBox(
+                height: 30,
+                child: Text(
+                  count,
+                  style: titleStyle,
+                )),
+            SizedBox(
+                height: 25,
+                child: IconButton(onPressed: onRemove, icon: const Icon(Icons.remove)))
+          ],
+        ))
+      ]),
     );
   }
 }

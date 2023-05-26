@@ -33,7 +33,7 @@ class CardOrdersList extends GetView<OrdersPendingController> {
                   )
                 ],
               ),
-              Divider(),
+              const Divider(),
               Text(
                   "Order Type : ${controller.printOrderType(listdata.ordersType!)}"),
               Text("Order Price : ${listdata.ordersPrice} \$"),

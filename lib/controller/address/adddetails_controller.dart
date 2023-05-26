@@ -43,9 +43,6 @@ class AddAddressDetailsController extends GetxController {
         street!.text,
         lat!,
         long!);
-  
-    print("=============================== Controller $response ");
-
     statusRequest = handlingData(response);
 
     if (StatusRequest.success == statusRequest) {

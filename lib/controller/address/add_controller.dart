@@ -17,7 +17,7 @@ class AddAddressController extends GetxController {
 
   addMarkers(LatLng latLng) {
     markers.clear();
-    markers.add(Marker(markerId: MarkerId("1"), position: latLng));
+    markers.add(Marker(markerId: const MarkerId("1"), position: latLng));
     lat = latLng.latitude;
     long = latLng.longitude;
     update();

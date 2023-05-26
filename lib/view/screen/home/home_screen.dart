@@ -82,7 +82,7 @@ class ListItemsSearch extends GetView<HomeControllerImp> {
               margin: const EdgeInsets.symmetric(vertical: 20),
               child: Card(
                   child: Container(
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 child: Row(
                   children: [
                     Expanded(

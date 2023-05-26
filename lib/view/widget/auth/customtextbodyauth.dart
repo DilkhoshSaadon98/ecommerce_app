@@ -1,3 +1,4 @@
+import 'package:ecommercecourse/core/constant/apptheme.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextBodyAuth extends StatelessWidget {
@@ -11,7 +12,7 @@ class CustomTextBodyAuth extends StatelessWidget {
       child: Text(
         text,
         textAlign: TextAlign.center,
-        style: Theme.of(context).textTheme.bodyText2,
+        style: titleStyle
       ),
     );
   }
