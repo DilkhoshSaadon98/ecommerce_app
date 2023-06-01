@@ -1,13 +1,13 @@
 class AppLink { 
-    static const String server = "http://192.168.0.191/ecommercecourse";
+    static const String server = "http://192.168.0.185/ecommercecourse";
 //! Image Link-=-----------------------------
-  static const String imageststatic =
-      "http://192.168.0.191/ecommercecourse/upload";
-  static const String linkStaticImageItems =
-      "http://192.168.0.191/ecommerece/upload";
+  // static const String imageststatic =
+  //     "http://192.168.0.191/ecommercecourse/upload";
+  // static const String linkStaticImageItems =
+  //     "http://192.168.0.191/ecommerece/upload";
 //========================== Image ============================
-  static const String imagestCategories = "http://192.168.0.191/ecommercecourse/upload/catagories/";
-  static const String imagestItems = "http://192.168.0.191/ecommercecourse/upload/items/";
+  static const String imagestCategories = "http://192.168.0.185/ecommercecourse/upload/catagories/";
+  static const String imagestItems = "http://192.168.0.185/ecommercecourse/upload/items/";
 // =============================================================
 //
   static const String test = "$server/test.php";

@@ -34,10 +34,12 @@ class ItemsHome extends StatelessWidget {
       width: Get.width * .44,
       margin: const EdgeInsets.only(right: 10),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15),
+          border: Border.all(width: 1),
+          borderRadius: BorderRadius.circular(10),
           color: AppColor.primaryColor.withOpacity(.9)),
       child: Card(
-        shape: BeveledRectangleBorder(borderRadius: BorderRadius.circular(15)),
+        shape:
+            ContinuousRectangleBorder(borderRadius: BorderRadius.circular(10)),
         child: Stack(
           children: [
             Container(

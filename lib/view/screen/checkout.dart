@@ -1,9 +1,10 @@
 import 'package:ecommercecourse/controller/checkout_controller.dart';
 import 'package:ecommercecourse/core/class/handlingdataview.dart';
+import 'package:ecommercecourse/core/constant/apptheme.dart';
 import 'package:ecommercecourse/core/constant/color.dart';
 import 'package:ecommercecourse/core/constant/imgaeasset.dart';
-import 'package:ecommercecourse/view/widget/checkout/carddeliveerytype.dart';
-import 'package:ecommercecourse/view/widget/checkout/cardpaymentmethod.dart';
+import 'package:ecommercecourse/view/widget/checkout/card_deliveery_type.dart';
+import 'package:ecommercecourse/view/widget/checkout/card_payment_method.dart';
 import 'package:ecommercecourse/view/widget/checkout/cardshippingaddress.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -36,12 +37,12 @@ class Checkout extends StatelessWidget {
                   padding: const EdgeInsets.all(20),
                   child: ListView(
                     children: [
-                      const Text(
+                      Text(
                         "Choose Payment Method",
-                        style: TextStyle(
+                        style: titleStyle.copyWith(
                             color: AppColor.secondColor,
                             fontWeight: FontWeight.bold,
-                            fontSize: 16),
+                            fontSize: 20),
                       ),
                       const SizedBox(height: 10),
                       InkWell(
@@ -66,19 +67,21 @@ class Checkout extends StatelessWidget {
                                 : false),
                       ),
                       const SizedBox(height: 20),
-                      const Text(
+                      Text(
                         "Choose Delivery Type",
-                        style: TextStyle(
+                        style: titleStyle.copyWith(
                             color: AppColor.secondColor,
                             fontWeight: FontWeight.bold,
-                            fontSize: 16),
+                            fontSize: 20),
                       ),
                       const SizedBox(height: 10),
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           InkWell(
                             onTap: () {
-                              controller.chooseDeliveryType("0");// 0 => Delivery
+                              controller
+                                  .chooseDeliveryType("0"); // 0 => Delivery
                             },
                             child: CardDeliveryTypeCheckout(
                                 imagename: AppImageAsset.deliveryImage2,
@@ -106,20 +109,22 @@ class Checkout extends StatelessWidget {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const Text(
+                            Text(
                               "Shipping Address",
-                              style: TextStyle(
+                              style: titleStyle.copyWith(
                                   color: AppColor.secondColor,
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 16),
+                                  fontSize: 20),
                             ),
                             const SizedBox(height: 10),
                             ...List.generate(
                               controller.dataaddress.length,
                               (index) => InkWell(
                                 onTap: () {
-                                  controller.chooseShippingAddress(
-                                      controller.dataaddress[index].addressId!.toString());
+                                  controller.getShippingAddress();
+                                  controller.chooseShippingAddress(controller
+                                      .dataaddress[index].addressId!
+                                      .toString());
                                 },
                                 child: CardShppingAddressCheckout(
                                     title:

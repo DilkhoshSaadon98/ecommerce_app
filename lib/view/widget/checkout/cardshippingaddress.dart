@@ -1,3 +1,4 @@
+import 'package:ecommercecourse/core/constant/apptheme.dart';
 import 'package:ecommercecourse/core/constant/color.dart';
 import 'package:flutter/material.dart';
 
@@ -18,14 +19,17 @@ class CardShppingAddressCheckout extends StatelessWidget {
       color: isactive ? AppColor.secondColor : Colors.white,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       child: ListTile(
+        leading: const Icon(Icons.location_on),
         title: Text(title,
-            style: TextStyle(
+            style: titleStyle.copyWith(
+                fontSize: 18 ,
                 color: isactive ? Colors.white : null,
-                fontWeight: FontWeight.bold)),
+                fontWeight: FontWeight.w700)),
         subtitle: Text(body,
-            style: TextStyle(
+            style: titleStyle.copyWith(
+                fontSize: 14,
                 color: isactive ? Colors.white : null,
-                fontWeight: FontWeight.bold)),
+                fontWeight: FontWeight.w100)),
       ),
     );
   }
