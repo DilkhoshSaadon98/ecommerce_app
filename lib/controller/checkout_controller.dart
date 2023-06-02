@@ -45,19 +45,13 @@ class CheckoutController extends GetxController {
 
     var response = await addressData
         .getData(myServices.sharedPreferences.getString("id")!);
-    print('respne');
-    print(response);
     statusRequest = handlingData(response);
-
     if (StatusRequest.success == statusRequest) {
       // Start backend
       if (response['status'] == "success") {
         List listdata = response['data'];
-        print('listdata');
-        print(listdata);
-       dataaddress.addAll(listdata.map((e) => AddressModel.fromJson(e)));
-        print('dataaddress');
-        print(dataaddress);
+        dataaddress.addAll(listdata.map((e) => AddressModel.fromJson(e)));
+        
       } else {
         statusRequest = StatusRequest.success;
       }
