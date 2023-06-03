@@ -19,9 +19,9 @@ class CardDeliveryTypeCheckout extends StatelessWidget {
       height: 120,
       width: 120,
       decoration: BoxDecoration(
-          color: active ? AppColor.secondColor : null,
+          color: active ? const Color.fromARGB(255, 49, 182, 182) : null,
           borderRadius: BorderRadius.circular(10),
-          border: Border.all(color: AppColor.secondColor)),
+          border: Border.all(color: const Color.fromARGB(255, 49, 182, 182))),
       child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
         Image.asset(
           imagename,

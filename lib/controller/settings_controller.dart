@@ -9,7 +9,7 @@ class SettingsController extends GetxController {
   logout() {
     String userid = myServices.sharedPreferences.getString("id")!;
     FirebaseMessaging.instance.unsubscribeFromTopic("users");
-    FirebaseMessaging.instance.unsubscribeFromTopic("users${userid}");
+    FirebaseMessaging.instance.unsubscribeFromTopic("users$userid");
     myServices.sharedPreferences.clear();
     Get.offAllNamed(AppRoute.login);
   }

@@ -1,6 +1,6 @@
 import 'package:ecommercecourse/core/class/statusrequest.dart';
 import 'package:ecommercecourse/core/constant/routes.dart';
-import 'package:ecommercecourse/core/functions/handingdatacontroller.dart';
+import 'package:ecommercecourse/core/functions/handing_data_controller.dart';
 import 'package:ecommercecourse/core/services/services.dart';
 import 'package:ecommercecourse/data/datasource/remote/address_data.dart';
 import 'package:ecommercecourse/data/datasource/remote/checkout_date.dart';
@@ -41,17 +41,15 @@ class CheckoutController extends GetxController {
   }
 
   getShippingAddress() async {
-    statusRequest = StatusRequest.loading;
-
     var response = await addressData
         .getData(myServices.sharedPreferences.getString("id")!);
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
       // Start backend
       if (response['status'] == "success") {
+        dataaddress.clear();
         List listdata = response['data'];
         dataaddress.addAll(listdata.map((e) => AddressModel.fromJson(e)));
-        
       } else {
         statusRequest = StatusRequest.success;
       }

@@ -1,4 +1,4 @@
-import 'package:ecommercecourse/controller/myfavoritecontroller.dart';
+import 'package:ecommercecourse/controller/myfavorite_controller.dart';
 import 'package:ecommercecourse/core/class/handlingdataview.dart';
 import 'package:ecommercecourse/core/constant/routes.dart';
 import 'package:ecommercecourse/view/widget/customappbar.dart';

@@ -1,4 +1,4 @@
-import 'package:ecommercecourse/controller/forgetpassword/forgetpassword_controller.dart';
+import 'package:ecommercecourse/controller/auth/forgetpassword/forgetpassword_controller.dart';
 import 'package:ecommercecourse/core/class/handlingdataview.dart';
 import 'package:ecommercecourse/core/class/statusrequest.dart';
 import 'package:ecommercecourse/core/constant/color.dart';

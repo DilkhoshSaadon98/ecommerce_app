@@ -5,7 +5,7 @@ import 'package:ecommercecourse/core/constant/color.dart';
 import 'package:ecommercecourse/core/constant/imgaeasset.dart';
 import 'package:ecommercecourse/view/widget/checkout/card_deliveery_type.dart';
 import 'package:ecommercecourse/view/widget/checkout/card_payment_method.dart';
-import 'package:ecommercecourse/view/widget/checkout/cardshippingaddress.dart';
+import 'package:ecommercecourse/view/widget/checkout/card_shipping_address.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -130,10 +130,11 @@ class Checkout extends StatelessWidget {
                                     title:
                                         "${controller.dataaddress[index].addressName}",
                                     body:
-                                        "${controller.dataaddress[index].addressCity} ${controller.dataaddress[index].addressStreet}",
+                                        "${controller.dataaddress[index].addressCity}  - ${controller.dataaddress[index].addressStreet}",
                                     isactive: controller.addressid ==
                                             controller
                                                 .dataaddress[index].addressId
+                                                .toString()
                                         ? true
                                         : false),
                               ),

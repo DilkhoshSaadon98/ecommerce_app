@@ -17,6 +17,7 @@ requestPermissionNotification() async {
 }
 
 fcmconfig() {
+  
   FirebaseMessaging.onMessage.listen((message) {
     print("================== Notification =================");
     print(message.notification!.title);
@@ -28,12 +29,6 @@ fcmconfig() {
 }
 
 refreshPageNotification(data) {
-  print("============================= page id ");
-  print(data['pageid']);
-  print("============================= page name ");
-  print(data['pagename']);
-  print("================== Current Route");
-  print(Get.currentRoute);
 
   if (Get.currentRoute == "/orderspending" &&
       data['pagename'] == "refreshorderpending") {

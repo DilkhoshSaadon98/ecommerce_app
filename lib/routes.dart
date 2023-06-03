@@ -18,9 +18,9 @@ import 'package:ecommercecourse/view/screen/items_screen.dart';
 import 'package:ecommercecourse/view/screen/language.dart';
 import 'package:ecommercecourse/view/screen/myfavorite.dart';
 import 'package:ecommercecourse/view/screen/on_boarding/onboarding.dart';
-import 'package:ecommercecourse/view/screen/orders/archive.dart';
-import 'package:ecommercecourse/view/screen/orders/details.dart';
-import 'package:ecommercecourse/view/screen/orders/pending.dart';
+import 'package:ecommercecourse/view/screen/orders/archive_screen.dart';
+import 'package:ecommercecourse/view/screen/orders/details_screen.dart';
+import 'package:ecommercecourse/view/screen/orders/pending_screen.dart';
 import 'package:ecommercecourse/view/screen/product_details_screen.dart';
 import 'package:get/get.dart';
 

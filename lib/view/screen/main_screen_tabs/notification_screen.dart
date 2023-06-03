@@ -33,6 +33,16 @@ class NotificationView extends StatelessWidget {
                             child: Stack(
                               children: [
                                 ListTile(
+                                  leading: IconButton(
+                                    onPressed: () {
+                                      controller.deleteNotification(controller.data[index]
+                                      ['notification_id']);
+                                    },
+                                    icon: const Icon(
+                                      Icons.remove_circle_outline,
+                                      color: Colors.red,
+                                    ),
+                                  ),
                                   title: Text(controller.data[index]
                                       ['notification_title']),
                                   subtitle: Text(controller.data[index]
@@ -41,8 +51,12 @@ class NotificationView extends StatelessWidget {
                                 Positioned(
                                     right: 5,
                                     child: Text(
-                                      Jiffy(controller.data[index]['notification_datetime'], "yyyy-MM-dd").fromNow(),
-                                      style:const TextStyle(
+                                      Jiffy(
+                                              controller.data[index]
+                                                  ['notification_datetime'],
+                                              "yyyy-MM-dd")
+                                          .fromNow(),
+                                      style: const TextStyle(
                                           color: AppColor.primaryColor,
                                           fontWeight: FontWeight.bold),
                                     ))

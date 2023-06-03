@@ -1,5 +1,5 @@
 import 'package:ecommercecourse/view/screen/main_screen_tabs/home_screen.dart';
-import 'package:ecommercecourse/view/screen/main_screen_tabs/notification.dart';
+import 'package:ecommercecourse/view/screen/main_screen_tabs/notification_screen.dart';
 import 'package:ecommercecourse/view/screen/setting/settings_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

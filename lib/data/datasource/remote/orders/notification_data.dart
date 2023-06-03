@@ -8,4 +8,8 @@ class NotificationData {
     var response = await crud.postData(AppLink.notification, {"id": id});
     return response.fold((l) => l, (r) => r);
   }
+  deleteData(String id) async {
+    var response = await crud.postData(AppLink.deleteNotification, {"id": id});
+    return response.fold((l) => l, (r) => r);
+  }
 }

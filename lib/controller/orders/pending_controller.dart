@@ -1,5 +1,5 @@
 import 'package:ecommercecourse/core/class/statusrequest.dart';
-import 'package:ecommercecourse/core/functions/handingdatacontroller.dart';
+import 'package:ecommercecourse/core/functions/handing_data_controller.dart';
 import 'package:ecommercecourse/core/services/services.dart';
 import 'package:ecommercecourse/data/datasource/remote/orders/pending_data.dart';
 import 'package:ecommercecourse/data/model/ordersmodel.dart';
@@ -17,7 +17,7 @@ class OrdersPendingController extends GetxController {
 
   String printOrderType(String val) {
     if (val == "0") {
-      return "delivery";
+      return "Delivery";
     } else {
       return "Recive";
     }
@@ -37,7 +37,7 @@ class OrdersPendingController extends GetxController {
     } else if (val == "1") {
       return "The Order is being Prepared ";
     } else if (val == "2") {
-      return "Ready To Picked up by Delivery man";
+      return "Ready To Picked up by Delivery Man";
     }  else if (val == "3") {
       return "On The Way";
     } else {
@@ -50,7 +50,6 @@ class OrdersPendingController extends GetxController {
     update();
     var response = await ordersPendingData
         .getData(myServices.sharedPreferences.getString("id")!);
-    print("=============================== Controller $response ");
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
       // Start backend
@@ -70,7 +69,6 @@ class OrdersPendingController extends GetxController {
     statusRequest = StatusRequest.loading;
     update();
     var response = await ordersPendingData.deleteData(orderid);
-    print("=============================== Controller $response ");
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
       // Start backend

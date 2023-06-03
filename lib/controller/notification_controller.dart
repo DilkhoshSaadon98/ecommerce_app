@@ -1,7 +1,8 @@
 import 'package:ecommercecourse/core/class/statusrequest.dart';
-import 'package:ecommercecourse/core/functions/handingdatacontroller.dart';
+import 'package:ecommercecourse/core/functions/handing_data_controller.dart';
 import 'package:ecommercecourse/core/services/services.dart';
 import 'package:ecommercecourse/data/datasource/remote/orders/notification_data.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class NotificationController extends GetxController {
@@ -17,8 +18,6 @@ class NotificationController extends GetxController {
     statusRequest = StatusRequest.loading;
     var response = await notificationData
         .getData(myServices.sharedPreferences.getString("id")!);
-
-    print("=============================== Controller $response ");
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
       // Start backend
@@ -29,6 +28,15 @@ class NotificationController extends GetxController {
       }
       // End
     }
+    update();
+  }
+
+  // favoriteData.deleteData(favroiteid);
+  // data.removeWhere((element) => element.favoriteId == favroiteid);
+  // update();
+  deleteNotification(int index) async {
+    notificationData.deleteData(index.toString());
+    getData();
     update();
   }
 

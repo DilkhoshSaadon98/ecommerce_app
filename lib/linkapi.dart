@@ -1,13 +1,15 @@
-class AppLink { 
-    static const String server = "http://192.168.0.185/ecommercecourse";
+class AppLink {
+  static const String server = "http://192.168.0.185/ecommercecourse";
 //! Image Link-=-----------------------------
   // static const String imageststatic =
   //     "http://192.168.0.191/ecommercecourse/upload";
   // static const String linkStaticImageItems =
   //     "http://192.168.0.191/ecommerece/upload";
 //========================== Image ============================
-  static const String imagestCategories = "http://192.168.0.185/ecommercecourse/upload/catagories/";
-  static const String imagestItems = "http://192.168.0.185/ecommercecourse/upload/items/";
+  static const String imagestCategories =
+      "http://192.168.0.185/ecommercecourse/upload/catagories/";
+  static const String imagestItems =
+      "http://192.168.0.185/ecommercecourse/upload/items/";
 // =============================================================
 //
   static const String test = "$server/test.php";
@@ -29,15 +31,14 @@ class AppLink {
   static const String verifycodeforgetpassword =
       "$server/forgetpassword/verifycode.php";
 
-// Home
-
+  //! Home
   static const String homepage = "$server/home.php";
-// items
+
+  //! items
   static const String items = "$server/items/items.php";
   static const String searchitems = "$server/items/search.php";
 
-//! Favorite
-
+  //! Favorite
   static const String favoriteAdd = "$server/favorite/add.php";
   static const String favoriteRemove = "$server/favorite/remove.php";
   static const String favoriteView = "$server/favorite/view.php";
@@ -51,23 +52,20 @@ class AppLink {
   static const String cartgetcountitems = "$server/cart/getcountitems.php";
 
   //! Address
-
   static const String addressView = "$server/address/view.php";
   static const String addressAdd = "$server/address/add.php";
   static const String addressEdit = "$server/address/edit.php";
   static const String addressDelete = "$server/address/delete.php";
 
-  //! Coupon 
+  //! Coupon
+  static const String checkcoupon = "$server/coupon/checkcoupon.php";
 
-  static const String checkcoupon  = "$server/coupon/checkcoupon.php";
-  
-  // Checkout 
-
-  static const String checkout  = "$server/orders/checkout.php";
-  
-  static const String pendingorders  = "$server/orders/pending.php";
-  static const String ordersarchive  = "$server/orders/archive.php";
-  static const String ordersdetails  = "$server/orders/details.php";
-  static const String ordersdelete  = "$server/orders/delete.php";
-
+  //! Checkout
+  static const String checkout = "$server/orders/checkout.php";
+  static const String pendingorders = "$server/orders/pending.php";
+  static const String ordersarchive = "$server/orders/archive.php";
+  static const String ordersdetails = "$server/orders/details.php";
+  static const String ordersdelete = "$server/orders/delete.php";
+  //! Notification;
+  static const String deleteNotification = "$server/admin/orders/delete_notification.php";
 }

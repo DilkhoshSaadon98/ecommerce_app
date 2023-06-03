@@ -1,4 +1,4 @@
-import 'package:ecommercecourse/controller/forgetpassword/verifycode_controller.dart'; 
+import 'package:ecommercecourse/controller/auth/forgetpassword/verifycode_controller.dart'; 
 import 'package:ecommercecourse/core/constant/color.dart'; 
 import 'package:ecommercecourse/view/widget/auth/customtextbodyauth.dart'; 
 import 'package:ecommercecourse/view/widget/auth/customtexttitleauth.dart'; 

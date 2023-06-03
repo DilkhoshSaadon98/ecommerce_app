@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:ecommercecourse/core/class/statusrequest.dart';
-import 'package:ecommercecourse/core/functions/handingdatacontroller.dart';
+import 'package:ecommercecourse/core/functions/handing_data_controller.dart';
 import 'package:ecommercecourse/data/datasource/remote/orders/details_data.dart';
 import 'package:ecommercecourse/data/model/cartmodel.dart';
 import 'package:ecommercecourse/data/model/ordersmodel.dart';
@@ -28,14 +28,14 @@ class OrdersDetailsController extends GetxController {
   intialData() {
     if (ordersModel.ordersType == "0") {
       cameraPosition = CameraPosition(
-        target: LatLng(double.parse(ordersModel.addressLat!),
-            double.parse(ordersModel.addressLong!)),
+        target: LatLng(double.parse(ordersModel.addressLat!.toString()),
+            double.parse(ordersModel.addressLong!.toString())),
         zoom: 12.4746,
       );
       markers.add(Marker(
           markerId: MarkerId("1"),
-          position: LatLng(double.parse(ordersModel.addressLat!),
-              double.parse(ordersModel.addressLong!))));
+          position: LatLng(double.parse(ordersModel.addressLat!.toString()),
+              double.parse(ordersModel.addressLong!.toString()))));
     }
   }
 
@@ -50,7 +50,7 @@ class OrdersDetailsController extends GetxController {
   getData() async {
     statusRequest = StatusRequest.loading;
 
-    var response = await ordersDetailsData.getData(ordersModel.ordersId!);
+    var response = await ordersDetailsData.getData(ordersModel.ordersId!.toString());
 
     print("=============================== Controller $response ");
 

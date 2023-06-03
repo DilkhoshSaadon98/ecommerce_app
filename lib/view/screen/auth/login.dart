@@ -2,7 +2,7 @@ import 'package:ecommercecourse/controller/auth/login_controller.dart';
 import 'package:ecommercecourse/core/class/handlingdataview.dart';
 import 'package:ecommercecourse/core/class/statusrequest.dart';
 import 'package:ecommercecourse/core/constant/color.dart';
-import 'package:ecommercecourse/core/functions/alertexitapp.dart';
+import 'package:ecommercecourse/core/functions/alert_exit_app.dart';
 import 'package:ecommercecourse/core/functions/validinput.dart';
 import 'package:ecommercecourse/view/widget/auth/custombuttonauth.dart';
 import 'package:ecommercecourse/view/widget/auth/customtextbodyauth.dart';

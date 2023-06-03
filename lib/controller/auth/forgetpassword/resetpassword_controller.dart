@@ -1,7 +1,7 @@
 import 'package:ecommercecourse/core/class/statusrequest.dart';
 import 'package:ecommercecourse/core/constant/routes.dart';
-import 'package:ecommercecourse/core/functions/handingdatacontroller.dart';
-import 'package:ecommercecourse/data/datasource/remote/forgetpassword/resetpassword.dart';
+import 'package:ecommercecourse/core/functions/handing_data_controller.dart';
+import 'package:ecommercecourse/data/datasource/remote/auth/forgetpassword/resetpassword.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
