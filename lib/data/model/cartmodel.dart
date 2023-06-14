@@ -1,5 +1,5 @@
 class CartModel {
-  int? itemsprice;
+  String? itemsprice;
   int? countitems;
   int? cartId;
   int? cartUsersid;

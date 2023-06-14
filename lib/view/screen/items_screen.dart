@@ -3,7 +3,7 @@ import 'package:ecommercecourse/controller/items_controller.dart';
 import 'package:ecommercecourse/core/class/handlingdataview.dart';
 import 'package:ecommercecourse/core/constant/routes.dart';
 import 'package:ecommercecourse/data/model/items_model.dart';
-import 'package:ecommercecourse/view/screen/main_screen_tabs/home_screen.dart';
+import 'package:ecommercecourse/view/screen/home/home_screen.dart';
 import 'package:ecommercecourse/view/widget/customappbar.dart';
 import 'package:ecommercecourse/view/widget/items/custom_list_items.dart';
 import 'package:ecommercecourse/view/widget/items/list_categoirse_items.dart';
@@ -17,22 +17,18 @@ class ItemsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     ItemsControllerImp controller = Get.put(ItemsControllerImp());
     FavoriteController controllerFav = Get.put(FavoriteController());
-
     return Scaffold(
       body: Container(
         padding: const EdgeInsets.all(15),
         child: ListView(children: [
           CustomAppBar(
             mycontroller: controller.search!,
-            titleappbar: "Find Product",
+            titleAppBar: "Find Product",
             onPressedSearch: () {
               controller.onSearchItems();
             },
             onChanged: (val) {
               controller.checkSearch(val);
-            },
-            onPressedIconFavorite: () {
-              Get.toNamed(AppRoute.myfavroite);
             },
           ),
           const SizedBox(height: 20),
@@ -47,7 +43,7 @@ class ItemsScreen extends StatelessWidget {
                           itemCount: controller.data.length,
                           gridDelegate:
                               const SliverGridDelegateWithFixedCrossAxisCount(
-                                  crossAxisCount: 2, childAspectRatio: 0.7),
+                                  crossAxisCount: 2, childAspectRatio: 0.8),
                           itemBuilder: (BuildContext context, index) {
                             controllerFav.isFavorite[controller.data[index]
                                     ['items_id']] =
@@ -56,7 +52,7 @@ class ItemsScreen extends StatelessWidget {
                                 itemsModel: ItemsModel.fromJson(
                                     controller.data[index]));
                           })
-                      : ListItemsSearch(listdatamodel: controller.listdata)))
+                      : ListItemsSearch(listdatamodel: controller.listdata2)))
         ]),
       ),
     );

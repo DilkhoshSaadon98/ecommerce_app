@@ -1,5 +1,7 @@
-import 'package:ecommercecourse/view/screen/main_screen_tabs/home_screen.dart';
-import 'package:ecommercecourse/view/screen/main_screen_tabs/notification_screen.dart';
+
+import 'package:ecommercecourse/view/screen/home/home_screen.dart';
+import 'package:ecommercecourse/view/screen/notifications/notification_screen.dart';
+import 'package:ecommercecourse/view/screen/offers/offers_screen.dart';
 import 'package:ecommercecourse/view/screen/setting/settings_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -11,21 +13,18 @@ abstract class HomeScreenController extends GetxController {
 class HomeScreenControllerImp extends HomeScreenController {
   int currentpage = 0;
 
-  List<Widget> listPage = const[
-     HomePage(),
-    NotificationView() , 
-    Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [Center(child: Text("Profile"))],
-    ),
+  List<Widget> listPage = const [
+    HomePageScreen(),
+    NotificationView(),
+    OffersScreen(),
     Settings()
   ];
 
   List bottomappbar = [
-    {"title": "home", "icon": Icons.home},
-    {"title": "n", "icon": Icons.notifications_active_outlined},
-    {"title": "profile", "icon": Icons.person_pin_sharp},
-    {"title": "settings", "icon": Icons.settings}
+    {"title": "Dashboard", "icon": Icons.home},
+    {"title": "Notifi", "icon": Icons.notifications_active_outlined},
+    {"title": "Offers", "icon": Icons.discount_outlined},
+    {"title": "Setting", "icon": Icons.settings}
   ];
 
   @override

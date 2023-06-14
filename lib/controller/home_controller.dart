@@ -4,7 +4,6 @@ import 'package:ecommercecourse/core/functions/handing_data_controller.dart';
 import 'package:ecommercecourse/core/services/services.dart';
 import 'package:ecommercecourse/data/datasource/remote/home_data.dart';
 import 'package:ecommercecourse/data/model/items_model.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -82,20 +81,20 @@ class HomeControllerImp extends HomeController {
 }
 
 class SearchMixController extends GetxController {
-  List<ItemsModel> listdata = [];
+  List<ItemsModel> listdata2 = [];
 
   late StatusRequest statusRequest;
   HomeData homeData = HomeData(Get.find());
-
+  
   searchData() async {
     statusRequest = StatusRequest.loading;
     var response = await homeData.searchData(search!.text);
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
       if (response['status'] == "success") {
-        listdata.clear();
+        listdata2.clear();
         List responsedata = response['data'];
-        listdata.addAll(responsedata.map((e) => ItemsModel.fromJson(e)));
+        listdata2.addAll(responsedata.map((e) => ItemsModel.fromJson(e)));
       } else {
         statusRequest = StatusRequest.failure;
       }

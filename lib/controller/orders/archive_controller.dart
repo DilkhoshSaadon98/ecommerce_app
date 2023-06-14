@@ -2,11 +2,13 @@ import 'package:ecommercecourse/core/class/statusrequest.dart';
 import 'package:ecommercecourse/core/functions/handing_data_controller.dart';
 import 'package:ecommercecourse/core/services/services.dart';
 import 'package:ecommercecourse/data/datasource/remote/orders/archive_data.dart';
+import 'package:ecommercecourse/data/datasource/remote/rating_data.dart';
 import 'package:ecommercecourse/data/model/ordersmodel.dart';
 import 'package:get/get.dart';
 
 class OrdersArchiveController extends GetxController {
   OrdersArchiveData ordersArchiveData = OrdersArchiveData(Get.find());
+  RatingData ratingData = RatingData(Get.find());
 
   List<OrdersModel> data = [];
 
@@ -37,7 +39,7 @@ class OrdersArchiveController extends GetxController {
       return "The Order is being Prepared ";
     } else if (val == "2") {
       return "Ready To Picked up by Delivery man";
-    }  else if (val == "3") {
+    } else if (val == "3") {
       return "On The Way";
     } else {
       return "Archive";
@@ -64,7 +66,22 @@ class OrdersArchiveController extends GetxController {
     update();
   }
 
- 
+  submitRating(String orderId ,String rating, String comment) async {
+    statusRequest = StatusRequest.loading;
+    update();
+    var response = await ratingData.sendData(orderId, rating, comment);
+    statusRequest = handlingData(response);
+    if (StatusRequest.success == statusRequest) {
+      // Start backend
+      if (response['status'] == "success") {
+        Get.snackbar("Success", "Thanks For Your Response");
+      } else {
+        statusRequest = StatusRequest.failure;
+      }
+      // End
+    }
+    update();
+  }
 
   refrehOrder() {
     getOrders();

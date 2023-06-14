@@ -96,8 +96,11 @@ class Settings extends StatelessWidget {
                   style: titleStyle.copyWith(fontSize: 16),
                 ),
               ),
+              //! Contact us
               ListTile(
-                onTap: () {},
+                onTap: () {
+                  controller.contactUs();
+                },
                 trailing: const Icon(
                   Icons.phone_callback_outlined,
                   color: AppColor.black,

@@ -22,8 +22,7 @@ class CustomCardHome extends GetView<HomeControllerImp> {
       child: Stack(children: [
         Positioned(
           top: 10,
-          right: controller.lang == "en" ? -5 : null,
-          left: controller.lang == "ar" ? 10 : null,
+          right: controller.lang == "en" ? null : -5,
           child: Lottie.asset(AppImageAsset.offers, width: 120, height: 120),
         ),
         Container(

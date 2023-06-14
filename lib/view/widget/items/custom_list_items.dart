@@ -49,26 +49,26 @@ class CustomListItems extends GetView<ItemsControllerImp> {
                               color: AppColor.black,
                               fontSize: 16,
                               fontWeight: FontWeight.bold)),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          const Text("Rating", textAlign: TextAlign.center),
-                          Container(
-                            alignment: Alignment.bottomCenter,
-                            height: 22,
-                            child: Row(
-                              children: [
-                                ...List.generate(
-                                    5,
-                                    (index) => const Icon(
-                                          Icons.star,
-                                          size: 15,
-                                        ))
-                              ],
-                            ),
-                          )
-                        ],
-                      ),
+                      // Row(
+                      //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      //   children: [
+                      //     const Text("Rating", textAlign: TextAlign.center),
+                      //     Container(
+                      //       alignment: Alignment.bottomCenter,
+                      //       height: 22,
+                      //       child: Row(
+                      //         children: [
+                      //           ...List.generate(
+                      //               5,
+                      //               (index) => const Icon(
+                      //                     Icons.star,
+                      //                     size: 15,
+                      //                   ))
+                      //         ],
+                      //       ),
+                      //     )
+                      //   ],
+                      // ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -76,7 +76,7 @@ class CustomListItems extends GetView<ItemsControllerImp> {
                             height: 40,
                             child: Stack(
                               children: [
-                                Text("${itemsModel.itemsPriceDiscount} \$",
+                                Text("${itemsModel.itemsPrice} \$",
                                     style: titleStyle.copyWith(
                                       color: AppColor.primaryColor,
                                     )),

@@ -60,12 +60,14 @@ class AppLink {
   //! Coupon
   static const String checkcoupon = "$server/coupon/checkcoupon.php";
 
-  //! Checkout
+  //! Orders
   static const String checkout = "$server/orders/checkout.php";
   static const String pendingorders = "$server/orders/pending.php";
   static const String ordersarchive = "$server/orders/archive.php";
   static const String ordersdetails = "$server/orders/details.php";
   static const String ordersdelete = "$server/orders/delete.php";
+  static const String rating = "$server/rating.php";
   //! Notification;
   static const String deleteNotification = "$server/admin/orders/delete_notification.php";
+  static const String offers = "$server/offers.php";
 }

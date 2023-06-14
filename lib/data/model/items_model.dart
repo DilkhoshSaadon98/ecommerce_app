@@ -9,7 +9,7 @@ class ItemsModel {
   int? itemsActive;
   int? itemsPrice;
   int? itemsCat;
-  int? itemsPriceDiscount;
+  String? itemsPriceDiscount;
   int? itemsDiscount;
   int? categoriesId;
   String? categoriesName;
@@ -49,7 +49,7 @@ class ItemsModel {
     itemsActive = json['items_active'];
     itemsPrice = json['items_price'];
     itemsCat = json['items_cat'];
-    itemsPriceDiscount = json['items_pricedisount'];
+    itemsPriceDiscount = json['itemspricedisount'];
     itemsDiscount = json['items_discount'];
     categoriesId = json['catagories_id'];
     categoriesName = json['catagories_name'];

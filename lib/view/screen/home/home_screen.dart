@@ -1,19 +1,20 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ecommercecourse/controller/home_controller.dart';
 import 'package:ecommercecourse/core/class/handlingdataview.dart';
+import 'package:ecommercecourse/core/constant/apptheme.dart';
+import 'package:ecommercecourse/core/constant/color.dart';
 import 'package:ecommercecourse/core/constant/routes.dart';
 import 'package:ecommercecourse/data/model/items_model.dart';
 import 'package:ecommercecourse/linkapi.dart';
+import 'package:ecommercecourse/view/screen/home/components/custom_title_home.dart';
+import 'package:ecommercecourse/view/screen/home/components/list_categories_home.dart';
+import 'package:ecommercecourse/view/screen/home/components/list_items_home.dart';
 import 'package:ecommercecourse/view/widget/customappbar.dart';
-import 'package:ecommercecourse/view/widget/home/custom_offers_card_home.dart';
-import 'package:ecommercecourse/view/widget/home/custom_title_home.dart';
-import 'package:ecommercecourse/view/widget/home/list_categories_home.dart';
-import 'package:ecommercecourse/view/widget/home/list_items_home.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+class HomePageScreen extends StatelessWidget {
+  const HomePageScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,37 +24,95 @@ class HomePage extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 15),
             child: ListView(
               children: [
-                CustomAppBar(
-                  mycontroller: controller.search!,
-                  titleappbar: "Find Product",
-                  // onPressedIcon: () {},
-                  onPressedSearch: () {
-                    controller.onSearchItems();
-                  },
-                  onChanged: (val) {
-                    controller.checkSearch(val);
-                  },
-                  onPressedIconFavorite: () {
-                    Get.toNamed(AppRoute.myfavroite);
-                  },
-                ),
+                //! App Bar When Search Start :
+                !controller.isSearch
+                    ? Container()
+                    : CustomAppBar(
+                        mycontroller: controller.search!,
+                        titleAppBar: "Find Product",
+                        // onPressedIcon: () {},
+                        onPressedSearch: () {
+                          controller.onSearchItems();
+                        },
+                        onChanged: (val) {
+                          controller.checkSearch(val);
+                        },
+                      ),
                 HandlingDataView(
                     statusRequest: controller.statusRequest,
                     widget: !controller.isSearch
-                        ? const Column(
+                        ? Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              CustomCardHome(
-                                  title: "A summer surprise",
-                                  body: "Cashback 20%"),
-                              CustomTitleHome(title: "Categories"),
-                              ListCategoriesHome(),
-                              CustomTitleHome(title: "Product for you"),
-                              ListItemsHome(),
+                              const SizedBox(
+                                height: 30,
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  IconButton(
+                                      onPressed: () {
+                                        Get.toNamed(AppRoute.myfavroite);
+                                      },
+                                      icon: const Icon(
+                                        Icons.table_restaurant_outlined,
+                                        color: AppColor.primaryColor,
+                                        size: 30,
+                                      )),
+                                  IconButton(
+                                      onPressed: () {
+                                        Get.toNamed(AppRoute.myfavroite);
+                                      },
+                                      icon: const Icon(
+                                        Icons.favorite_outline,
+                                        color: AppColor.primaryColor,
+                                        size: 30,
+                                      )),
+                                ],
+                              ),
+                              const SizedBox(
+                                height: 20,
+                              ),
+                              Row(
+                                children: [
+                                  Text(
+                                    'Welcome, ',
+                                    style: titleStyle.copyWith(
+                                        fontSize: 26,
+                                        color: AppColor.black,
+                                        height: 1),
+                                  ),
+                                  Text(
+                                    '${controller.username!.capitalizeFirst}',
+                                    style: titleStyle.copyWith(
+                                        fontSize: 26,
+                                        color: AppColor.primaryColor,
+                                        height: 1),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(
+                                height: 15,
+                              ),
+                              CustomAppBar(
+                                mycontroller: controller.search!,
+                                titleAppBar: "Search",
+                                // onPressedIcon: () {},
+                                onPressedSearch: () {
+                                  controller.onSearchItems();
+                                },
+                                onChanged: (val) {
+                                  controller.checkSearch(val);
+                                },
+                              ),
+                              const CustomTitleHome(title: "Menu"),
+                              const ListCategoriesHome(),
+                              const CustomTitleHome(title: "Foods for you"),
+                              const ListItemsHome(),
                             ],
                           )
-                        : ListItemsSearch(listdatamodel: controller.listdata)
-                        )
+                        : ListItemsSearch(listdatamodel: controller.listdata2))
 
                 // const CustomTitleHome(title: "Offer"),
                 // const ListItemsHome()

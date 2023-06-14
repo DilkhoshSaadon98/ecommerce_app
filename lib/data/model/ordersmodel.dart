@@ -17,6 +17,8 @@ class OrdersModel {
   String? addressStreet;
   double? addressLat;
   double? addressLong;
+  int? rating;
+  String? noteRating;
 
   OrdersModel(
       {this.ordersId,
@@ -36,7 +38,11 @@ class OrdersModel {
       this.addressCity,
       this.addressStreet,
       this.addressLat,
-      this.addressLong});
+      this.addressLong,
+      this.rating,
+      this.noteRating,
+      
+      });
 
   OrdersModel.fromJson(Map<String, dynamic> json) {
     ordersId = int.parse(json['orders_id'].toString());
@@ -54,9 +60,11 @@ class OrdersModel {
     addressUsersid = json['address_usersid'];
     addressName = json['address_name'];
     addressCity = json['address_city'];
+    addressCity = json['orders_noterating'];
     addressStreet = json['address_street'];
     addressLat = double.parse(json['address_lat'].toString());
     addressLong = double.parse(json['address_long'].toString());
+    rating = json['orders_rating'];
   }
 
   Map<String, dynamic> toJson() {

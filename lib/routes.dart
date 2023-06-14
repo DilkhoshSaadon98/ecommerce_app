@@ -16,6 +16,7 @@ import 'package:ecommercecourse/view/screen/checkout_screen.dart';
 import 'package:ecommercecourse/view/main_screen.dart';
 import 'package:ecommercecourse/view/screen/items_screen.dart';
 import 'package:ecommercecourse/view/screen/language.dart';
+import 'package:ecommercecourse/view/screen/offers/offers_screen.dart';
 import 'package:ecommercecourse/view/screen/myfavorite.dart';
 import 'package:ecommercecourse/view/screen/on_boarding/onboarding.dart';
 import 'package:ecommercecourse/view/screen/orders/archive_screen.dart';
@@ -28,7 +29,7 @@ List<GetPage<dynamic>>? routes = [
   GetPage(
       name: "/", page: () => const Language(), middlewares: [MyMiddleWare()]),
   GetPage(name: AppRoute.cart, page: () => const Cart()),
-//  Auth
+  //!  Auth
   GetPage(name: AppRoute.login, page: () => const Login()),
   GetPage(name: AppRoute.signUp, page: () => const SignUp()),
   GetPage(name: AppRoute.forgetPassword, page: () => const ForgetPassword()),
@@ -41,7 +42,8 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: AppRoute.onBoarding, page: () => const OnBoarding()),
   GetPage(
       name: AppRoute.verfiyCodeSignUp, page: () => const VerfiyCodeSignUp()),
-  //
+  //!
+  GetPage(name: AppRoute.offersPage, page: () => const OffersScreen()),
   GetPage(name: AppRoute.homepage, page: () => const HomeScreen()),
   GetPage(name: AppRoute.items, page: () => const ItemsScreen()),
   GetPage(name: AppRoute.productdetails, page: () => const ProductDetails()),

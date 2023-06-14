@@ -20,7 +20,7 @@ class MyFavorite extends StatelessWidget {
             builder: ((controller) => ListView(children: [
                   CustomAppBar(
                     mycontroller: controller.search!,
-                    titleappbar: "Find Product",
+                    titleAppBar: "Find Product",
                     iconData: Icons.arrow_forward,
                     // onPressedIcon: () {},
                     onPressedSearch: () {
@@ -28,9 +28,6 @@ class MyFavorite extends StatelessWidget {
                     },
                     onChanged: (val) {
                       controller.checkSearch(val);
-                    },
-                    onPressedIconFavorite: () {
-                      Get.offAllNamed(AppRoute.homepage);
                     },
                   ),
                   const SizedBox(height: 20),
