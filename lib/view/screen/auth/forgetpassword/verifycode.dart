@@ -1,10 +1,11 @@
 import 'package:ecommercecourse/controller/auth/forgetpassword/verifycode_controller.dart'; 
 import 'package:ecommercecourse/core/constant/color.dart'; 
-import 'package:ecommercecourse/view/widget/auth/customtextbodyauth.dart'; 
-import 'package:ecommercecourse/view/widget/auth/customtexttitleauth.dart'; 
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:get/get.dart';
+
+import '../components/customtextbodyauth.dart';
+import '../components/customtexttitleauth.dart';
 
 class VerfiyCode extends StatelessWidget {
   const VerfiyCode({Key? key}) : super(key: key);
@@ -21,7 +22,7 @@ class VerfiyCode extends StatelessWidget {
         title: Text('Verification Code',
             style: Theme.of(context)
                 .textTheme
-                .headline1!
+                .displayLarge!
                 .copyWith(color: AppColor.grey)),
       ),
       body: Container(

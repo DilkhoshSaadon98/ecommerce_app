@@ -1,17 +1,17 @@
 import 'package:ecommercecourse/controller/auth/login_controller.dart';
 import 'package:ecommercecourse/core/class/handlingdataview.dart';
-import 'package:ecommercecourse/core/class/statusrequest.dart';
 import 'package:ecommercecourse/core/constant/color.dart';
 import 'package:ecommercecourse/core/functions/alert_exit_app.dart';
 import 'package:ecommercecourse/core/functions/validinput.dart';
-import 'package:ecommercecourse/view/widget/auth/custombuttonauth.dart';
-import 'package:ecommercecourse/view/widget/auth/customtextbodyauth.dart';
-import 'package:ecommercecourse/view/widget/auth/customtextformauth.dart';
-import 'package:ecommercecourse/view/widget/auth/customtexttitleauth.dart';
-import 'package:ecommercecourse/view/widget/auth/logoauth.dart';
-import 'package:ecommercecourse/view/widget/auth/textsignup.dart';
+import 'package:ecommercecourse/view/screen/auth/components/customtexttitleauth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import 'components/custombuttonauth.dart';
+import 'components/customtextbodyauth.dart';
+import 'components/customtextformauth.dart';
+import 'components/logoauth.dart';
+import 'components/textsignup.dart';
 
 class Login extends StatelessWidget {
   const Login({Key? key}) : super(key: key);
@@ -27,7 +27,7 @@ class Login extends StatelessWidget {
         title: Text('Sign In',
             style: Theme.of(context)
                 .textTheme
-                .headline1!
+                .displayLarge!
                 .copyWith(color: AppColor.grey)),
       ),
       body: WillPopScope(

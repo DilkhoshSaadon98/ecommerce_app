@@ -1,8 +1,8 @@
 import 'package:ecommercecourse/controller/cart_controller.dart';
 import 'package:ecommercecourse/core/constant/apptheme.dart';
 import 'package:ecommercecourse/core/constant/color.dart';
-import 'package:ecommercecourse/view/widget/cart/buttoncart.dart';
-import 'package:ecommercecourse/view/widget/cart/custom_button_coupon.dart';
+import 'package:ecommercecourse/view/screen/cart/components/buttoncart.dart';
+import 'package:ecommercecourse/view/screen/cart/components/custom_button_coupon.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

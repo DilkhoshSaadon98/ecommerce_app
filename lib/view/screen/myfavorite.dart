@@ -1,6 +1,5 @@
 import 'package:ecommercecourse/controller/myfavorite_controller.dart';
 import 'package:ecommercecourse/core/class/handlingdataview.dart';
-import 'package:ecommercecourse/core/constant/routes.dart';
 import 'package:ecommercecourse/view/widget/customappbar.dart';
 import 'package:ecommercecourse/view/widget/myfavorite/customlistfavoriteitems.dart';
 import 'package:flutter/material.dart';

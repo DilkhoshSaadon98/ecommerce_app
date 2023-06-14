@@ -1,12 +1,12 @@
 import 'package:ecommercecourse/controller/auth/verfiycodesignup_controller.dart';
 import 'package:ecommercecourse/core/class/handlingdataview.dart';
-import 'package:ecommercecourse/core/class/statusrequest.dart';
 import 'package:ecommercecourse/core/constant/color.dart';
-import 'package:ecommercecourse/view/widget/auth/customtextbodyauth.dart';
-import 'package:ecommercecourse/view/widget/auth/customtexttitleauth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:get/get.dart';
+
+import 'components/customtextbodyauth.dart';
+import 'components/customtexttitleauth.dart';
 
 class VerfiyCodeSignUp extends StatelessWidget {
   const VerfiyCodeSignUp({Key? key}) : super(key: key);
@@ -22,7 +22,7 @@ class VerfiyCodeSignUp extends StatelessWidget {
         title: Text('Verification Code',
             style: Theme.of(context)
                 .textTheme
-                .headline1!
+                .displayLarge!
                 .copyWith(color: AppColor.grey)),
       ),
       body: GetBuilder<VerifyCodeSignUpControllerImp>(
@@ -58,7 +58,7 @@ class VerfiyCodeSignUp extends StatelessWidget {
                   const SizedBox(height: 40),
                   InkWell(onTap: (){
                     controller.reSend() ; 
-                  },child: Center(child: Text("Resend verfiy code" , style: TextStyle(color: AppColor.primaryColor , fontSize: 20 ),)),)
+                  },child: const Center(child: Text("Resend verfiy code" , style: TextStyle(color: AppColor.primaryColor , fontSize: 20 ),)),)
                 ]),
               ))),
     );

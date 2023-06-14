@@ -1,5 +1,4 @@
 import 'package:ecommercecourse/core/constant/apptheme.dart';
-import 'package:ecommercecourse/core/constant/color.dart';
 import 'package:flutter/material.dart';
 
 class CardShppingAddressCheckout extends StatelessWidget {

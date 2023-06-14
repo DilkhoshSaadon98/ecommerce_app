@@ -1,13 +1,13 @@
 import 'package:ecommercecourse/controller/auth/forgetpassword/forgetpassword_controller.dart';
 import 'package:ecommercecourse/core/class/handlingdataview.dart';
-import 'package:ecommercecourse/core/class/statusrequest.dart';
 import 'package:ecommercecourse/core/constant/color.dart';
-import 'package:ecommercecourse/view/widget/auth/custombuttonauth.dart';
-import 'package:ecommercecourse/view/widget/auth/customtextbodyauth.dart';
-import 'package:ecommercecourse/view/widget/auth/customtextformauth.dart';
-import 'package:ecommercecourse/view/widget/auth/customtexttitleauth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../components/custombuttonauth.dart';
+import '../components/customtextbodyauth.dart';
+import '../components/customtextformauth.dart';
+import '../components/customtexttitleauth.dart';
 
 class ForgetPassword extends StatelessWidget {
   const ForgetPassword({Key? key}) : super(key: key);
@@ -23,7 +23,7 @@ class ForgetPassword extends StatelessWidget {
         title: Text('14'.tr,
             style: Theme.of(context)
                 .textTheme
-                .headline1!
+                .displayLarge!
                 .copyWith(color: AppColor.grey)),
       ),
       body: GetBuilder<ForgetPasswordControllerImp>(

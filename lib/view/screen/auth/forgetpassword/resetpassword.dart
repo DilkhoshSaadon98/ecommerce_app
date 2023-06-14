@@ -1,14 +1,14 @@
 import 'package:ecommercecourse/controller/auth/forgetpassword/resetpassword_controller.dart';
 import 'package:ecommercecourse/core/class/handlingdataview.dart';
-import 'package:ecommercecourse/core/class/statusrequest.dart';
 import 'package:ecommercecourse/core/constant/color.dart';
 import 'package:ecommercecourse/core/functions/validinput.dart';
-import 'package:ecommercecourse/view/widget/auth/custombuttonauth.dart';
-import 'package:ecommercecourse/view/widget/auth/customtextbodyauth.dart';
-import 'package:ecommercecourse/view/widget/auth/customtextformauth.dart';
-import 'package:ecommercecourse/view/widget/auth/customtexttitleauth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../components/custombuttonauth.dart';
+import '../components/customtextbodyauth.dart';
+import '../components/customtextformauth.dart';
+import '../components/customtexttitleauth.dart';
 
 class ResetPassword extends StatelessWidget {
   const ResetPassword({Key? key}) : super(key: key);
@@ -24,7 +24,7 @@ class ResetPassword extends StatelessWidget {
         title: Text('ResetPassword',
             style: Theme.of(context)
                 .textTheme
-                .headline1!
+                .displayLarge!
                 .copyWith(color: AppColor.grey)),
       ),
       body: GetBuilder<ResetPasswordControllerImp>(
@@ -59,7 +59,7 @@ class ResetPassword extends StatelessWidget {
                         return validInput(val!, 3, 40, "password");
                       },
                       mycontroller: controller.repassword,
-                      hinttext: "Re" + " " + "13".tr,
+                      hinttext: "Re ${"13".tr}",
                       iconData: Icons.lock_outline,
                       labeltext: "19".tr,
                       // mycontroller: ,

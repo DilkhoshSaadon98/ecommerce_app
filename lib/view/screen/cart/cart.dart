@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:ecommercecourse/controller/cart_controller.dart';
 import 'package:ecommercecourse/core/class/handlingdataview.dart';
-import 'package:ecommercecourse/view/widget/cart/custom_bottom_navgationbar_cart.dart';
-import 'package:ecommercecourse/view/widget/cart/customitemscartlist.dart';
+import 'package:ecommercecourse/view/screen/cart/components/custom_bottom_navgationbar_cart.dart';
+import 'package:ecommercecourse/view/screen/cart/components/customitemscartlist.dart';
 import 'package:ecommercecourse/view/widget/cart/topcardCart.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

@@ -21,12 +21,12 @@ class CatagoriesModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['catagories_id'] = this.catagoriesId;
-    data['catagories_name'] = this.catagoriesName;
-    data['catagories_nama_ar'] = this.catagoriesNamaAr;
-    data['catagories_image'] = this.catagoriesImage;
-    data['catagories_datetime'] = this.catagoriesDatetime;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['catagories_id'] = catagoriesId;
+    data['catagories_name'] = catagoriesName;
+    data['catagories_nama_ar'] = catagoriesNamaAr;
+    data['catagories_image'] = catagoriesImage;
+    data['catagories_datetime'] = catagoriesDatetime;
     return data;
   }
 }

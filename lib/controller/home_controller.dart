@@ -26,7 +26,9 @@ class HomeControllerImp extends HomeController {
   String? username;
   String? id;
   String? lang;
+  @override
   TextEditingController? search;
+  @override
   HomeData homeData = HomeData(Get.find());
 
   // List data = [];

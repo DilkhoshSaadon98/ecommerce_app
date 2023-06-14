@@ -1,9 +1,10 @@
 import 'package:ecommercecourse/controller/auth/successsignup_controller.dart';
 import 'package:ecommercecourse/core/constant/apptheme.dart';
 import 'package:ecommercecourse/core/constant/color.dart';
-import 'package:ecommercecourse/view/widget/auth/custombuttonauth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import 'components/custombuttonauth.dart';
 
 class SuccessSignUp extends StatelessWidget {
   const SuccessSignUp({Key? key}) : super(key: key);
@@ -20,7 +21,7 @@ class SuccessSignUp extends StatelessWidget {
         title: Text('32'.tr,
             style: Theme.of(context)
                 .textTheme
-                .headline1!
+                .displayLarge!
                 .copyWith(color: AppColor.grey)),
       ),
       body: Container(

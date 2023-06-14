@@ -4,13 +4,14 @@ import 'package:ecommercecourse/core/constant/apptheme.dart';
 import 'package:ecommercecourse/core/constant/color.dart';
 import 'package:ecommercecourse/core/functions/alert_exit_app.dart';
 import 'package:ecommercecourse/core/functions/validinput.dart';
-import 'package:ecommercecourse/view/widget/auth/custombuttonauth.dart';
-import 'package:ecommercecourse/view/widget/auth/customtextbodyauth.dart';
-import 'package:ecommercecourse/view/widget/auth/customtextformauth.dart';
-import 'package:ecommercecourse/view/widget/auth/customtexttitleauth.dart';
-import 'package:ecommercecourse/view/widget/auth/textsignup.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import 'components/custombuttonauth.dart';
+import 'components/customtextbodyauth.dart';
+import 'components/customtextformauth.dart';
+import 'components/customtexttitleauth.dart';
+import 'components/textsignup.dart';
 
 class SignUp extends StatelessWidget {
   const SignUp({Key? key}) : super(key: key);

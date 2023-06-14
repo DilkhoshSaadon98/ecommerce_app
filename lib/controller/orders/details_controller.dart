@@ -33,7 +33,7 @@ class OrdersDetailsController extends GetxController {
         zoom: 12.4746,
       );
       markers.add(Marker(
-          markerId: MarkerId("1"),
+          markerId: const MarkerId("1"),
           position: LatLng(double.parse(ordersModel.addressLat!.toString()),
               double.parse(ordersModel.addressLong!.toString()))));
     }

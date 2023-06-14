@@ -10,6 +10,7 @@ class OffersController extends SearchMixController {
 
   List<dynamic> data = [];
 
+  @override
   late StatusRequest statusRequest;
 
   getData() async {

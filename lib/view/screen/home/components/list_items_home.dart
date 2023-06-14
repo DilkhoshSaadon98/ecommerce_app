@@ -30,57 +30,65 @@ class ItemsHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: Get.width * .44,
-      margin: const EdgeInsets.only(right: 10, top: 30),
-      child: Card(
-        color: AppColor.backgroundcolor,
-        shape: const ContinuousRectangleBorder(
-          borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(15),
-              bottomRight: Radius.circular(15),
-              topLeft: Radius.circular(50),
-              topRight: Radius.circular(50)),
-        ),
-        child: Stack(
-          clipBehavior: Clip.none,
-          children: [
-            Positioned(
-              top: -80,
-              child: Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
-                margin: const EdgeInsets.symmetric(horizontal: 15),
-                child: Image.network(
-                  "${AppLink.imagestItems}${itemsModel.itemsImage}",
-                  height: 170,
-                  width: 100,
-                ),
-              ),
+    Get.put(HomeControllerImp());
+    return GetBuilder<HomeControllerImp>(builder: (controller) {
+      return GestureDetector(
+        onTap: () {
+          controller.goToPageProductDetails(itemsModel);
+        },
+        child: Container(
+          width: Get.width * .44,
+          margin: const EdgeInsets.only(right: 10, top: 30),
+          child: Card(
+            color: AppColor.backgroundcolor,
+            shape: const ContinuousRectangleBorder(
+              borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(15),
+                  bottomRight: Radius.circular(15),
+                  topLeft: Radius.circular(50),
+                  topRight: Radius.circular(50)),
             ),
-            Container(
-                alignment: Alignment.bottomCenter,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Text(
-                      "${itemsModel.itemsName}",
-                      style:
-                          bodyStyle.copyWith(color: Colors.black, fontSize: 20),
+            child: Stack(
+              clipBehavior: Clip.none,
+              children: [
+                Positioned(
+                  top: -80,
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 10, vertical: 15),
+                    margin: const EdgeInsets.symmetric(horizontal: 15),
+                    child: Image.network(
+                      "${AppLink.imagestItems}${itemsModel.itemsImage}",
+                      height: 170,
+                      width: 100,
                     ),
-                    Text(
-                      "${itemsModel.itemsPrice} \$",
-                      style:
-                          bodyStyle.copyWith(color: Colors.black, fontSize: 18),
-                    ),
-                    const SizedBox(
-                      height: 15,
-                    )
-                  ],
-                ))
-          ],
+                  ),
+                ),
+                Container(
+                    alignment: Alignment.bottomCenter,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Text(
+                          "${itemsModel.itemsName}",
+                          style: bodyStyle.copyWith(
+                              color: Colors.black, fontSize: 20),
+                        ),
+                        Text(
+                          "${itemsModel.itemsPrice} \$",
+                          style: bodyStyle.copyWith(
+                              color: Colors.black, fontSize: 18),
+                        ),
+                        const SizedBox(
+                          height: 15,
+                        )
+                      ],
+                    ))
+              ],
+            ),
+          ),
         ),
-      ),
-    );
+      );
+    });
   }
 }

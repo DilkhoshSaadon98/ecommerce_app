@@ -2,9 +2,8 @@ import 'package:ecommercecourse/controller/favorite_controller.dart';
 import 'package:ecommercecourse/controller/home_controller.dart';
 import 'package:ecommercecourse/controller/offers_controller.dart';
 import 'package:ecommercecourse/core/class/handlingdataview.dart';
-import 'package:ecommercecourse/core/constant/routes.dart';
 import 'package:ecommercecourse/view/widget/customappbar.dart';
-import 'package:ecommercecourse/view/widget/offers/custom_list_item_offers.dart';
+import 'package:ecommercecourse/view/screen/offers/components/custom_list_item_offers.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

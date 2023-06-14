@@ -9,12 +9,12 @@ class TestView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: Container(
-          padding: EdgeInsets.symmetric(horizontal: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: MaterialButton(
             color: AppColor.secondColor,
             textColor: Colors.white,
             onPressed: () {},
-            child: Text("CheckOut" , style: TextStyle(color: Colors.white , fontWeight: FontWeight.bold , fontSize: 18)),
+            child: const Text("CheckOut" , style: TextStyle(color: Colors.white , fontWeight: FontWeight.bold , fontSize: 18)),
           )),
       appBar: AppBar(
         centerTitle: true,
@@ -59,12 +59,12 @@ class TestView extends StatelessWidget {
                         color: AppColor.secondColor,
                         height: 1,
                         fontWeight: FontWeight.bold))),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             const Text("Choose Type Delivery",
                 style: TextStyle(
                     fontWeight: FontWeight.bold, color: AppColor.secondColor)),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
 
             Row(
               children: [
@@ -80,7 +80,7 @@ class TestView extends StatelessWidget {
                       children: [
                         Image.asset(AppImageAsset.deliveryImage2,
                             width: 40, color: Colors.white),
-                        Text(
+                        const Text(
                           "توصيل",
                           style: TextStyle(
                             color: Colors.white,
@@ -89,7 +89,7 @@ class TestView extends StatelessWidget {
                         )
                       ],
                     )),
-                SizedBox(width: 10),
+                const SizedBox(width: 10),
                 Container(
                     // padding: EdgeInsets.all(20),
                     height: 100,
@@ -102,25 +102,25 @@ class TestView extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Image.asset(AppImageAsset.drivethruImage, width: 40),
-                        Text("استلام")
+                        const Text("استلام")
                       ],
                     ))
               ],
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             const Text("Shipping Address",
                 style: TextStyle(
                     fontWeight: FontWeight.bold, color: AppColor.secondColor)),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Card(
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20)),
               child: Container(
                   decoration:
                       BoxDecoration(borderRadius: BorderRadius.circular(20)),
-                  padding: EdgeInsets.all(10),
-                  child: ListTile(
+                  padding: const EdgeInsets.all(10),
+                  child: const ListTile(
                     title: Text("Home",
                         style: TextStyle(fontWeight: FontWeight.bold)),
                     subtitle: Text("Damascus Street One"),
@@ -132,8 +132,8 @@ class TestView extends StatelessWidget {
               child: Container(
                   decoration:
                       BoxDecoration(borderRadius: BorderRadius.circular(20)),
-                  padding: EdgeInsets.all(10),
-                  child: ListTile(
+                  padding: const EdgeInsets.all(10),
+                  child: const ListTile(
                     title: Text("Office",
                         style: TextStyle(fontWeight: FontWeight.bold)),
                     subtitle: Text("Hama Street Two"),

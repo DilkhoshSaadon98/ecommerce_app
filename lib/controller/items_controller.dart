@@ -23,6 +23,7 @@ class ItemsControllerImp extends SearchMixController {
 
   List data = [];
 
+  @override
   late StatusRequest statusRequest;
 
   MyServices myServices = Get.find();

@@ -11,7 +11,7 @@ import 'package:ecommercecourse/view/screen/auth/forgetpassword/success_resetpas
 import 'package:ecommercecourse/view/screen/auth/success_signup.dart';
 import 'package:ecommercecourse/view/screen/auth/forgetpassword/verifycode.dart';
 import 'package:ecommercecourse/view/screen/auth/verifycodesignup.dart';
-import 'package:ecommercecourse/view/screen/cart.dart';
+import 'package:ecommercecourse/view/screen/cart/cart.dart';
 import 'package:ecommercecourse/view/screen/checkout_screen.dart'; 
 import 'package:ecommercecourse/view/main_screen.dart';
 import 'package:ecommercecourse/view/screen/items_screen.dart';
