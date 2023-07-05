@@ -1,3 +1,4 @@
+
 class CatagoriesModel {
   int? catagoriesId;
   String? catagoriesName;

@@ -1,5 +1,7 @@
+import 'package:ecommercecourse/core/constant/apptheme.dart';
 import 'package:ecommercecourse/core/constant/color.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class CustomButtonCart extends StatelessWidget {
   final String textbutton;
@@ -9,15 +11,18 @@ class CustomButtonCart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      width: double.infinity,
-      child: MaterialButton(
-        color: AppColor.primaryColor,
-        textColor: Colors.white,
-        onPressed: onPressed,
-        child: Text(textbutton,
-            style: const TextStyle(fontWeight: FontWeight.bold)),
+    return InkWell(
+      onTap: onPressed,
+      child: Container(
+        padding: const EdgeInsets.only(bottom: 8),
+        margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+        height: 50,
+        width: Get.width,
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+            color: primaryColor, borderRadius: BorderRadius.circular(5)),
+        child:
+            Text(textbutton, style: titleStyle.copyWith(color: AppColor.white)),
       ),
     );
   }

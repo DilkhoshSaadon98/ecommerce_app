@@ -23,7 +23,7 @@ class ProductDetails extends GetView<ProductDetailsControllerImp> {
             child: MaterialButton(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10)),
-                color: AppColor.secondColor,
+                color: AppColor.fourthColor,
                 onPressed: () {
                   Get.toNamed(AppRoute.cart);
                 },
@@ -34,6 +34,7 @@ class ProductDetails extends GetView<ProductDetailsControllerImp> {
                 ))),
         body: GetBuilder<ProductDetailsControllerImp>(
             builder: (controller) => ListView(children: [
+              //! Product Header 
                   const TopProductPageDetails(),
                   const SizedBox(
                     height: 100,
@@ -79,17 +80,6 @@ class ProductDetails extends GetView<ProductDetailsControllerImp> {
                                         fontWeight: FontWeight.w300,
                                         color: AppColor.grey2)),
                               ),
-                              const Divider(
-                                thickness: 1,
-                                color: AppColor.primaryColor,
-                              ),
-                              Text("Color",
-                                  style: titleStyle.copyWith(
-                                    fontSize: 20,
-                                    color: AppColor.black,
-                                  )),
-                              const SizedBox(height: 10),
-                              const SubitemsList()
                             ]),
                       ))
                 ])));

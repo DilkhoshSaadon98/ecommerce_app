@@ -1,3 +1,4 @@
+import 'package:ecommercecourse/core/constant/apptheme.dart';
 import 'package:ecommercecourse/core/constant/color.dart';
 import 'package:flutter/material.dart';
 
@@ -17,12 +18,13 @@ class CustomTextSignUpOrSignIn extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text(textone),
+        Text(
+          textone,
+          style: bodyStyle.copyWith(color: AppColor.grey),
+        ),
         InkWell(
           onTap: onTap,
-          child: Text(texttwo,
-              style: const TextStyle(
-                  color: AppColor.primaryColor, fontWeight: FontWeight.bold)),
+          child: Text(texttwo, style: titleStyle.copyWith(color: primaryColor)),
         )
       ],
     );

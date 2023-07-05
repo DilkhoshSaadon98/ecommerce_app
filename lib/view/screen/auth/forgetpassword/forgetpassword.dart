@@ -4,10 +4,10 @@ import 'package:ecommercecourse/core/constant/color.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../components/custombuttonauth.dart';
-import '../components/customtextbodyauth.dart';
-import '../components/customtextformauth.dart';
-import '../components/customtexttitleauth.dart';
+import '../components/custom_button_auth.dart';
+import '../components/custom_textbody_auth.dart';
+import '../components/custom_textform_auth.dart';
+import '../components/custom_texttitle_auth.dart';
 
 class ForgetPassword extends StatelessWidget {
   const ForgetPassword({Key? key}) : super(key: key);

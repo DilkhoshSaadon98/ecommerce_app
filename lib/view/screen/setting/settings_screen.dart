@@ -48,6 +48,19 @@ class Settings extends StatelessWidget {
               ),
               ListTile(
                 onTap: () {
+                  Get.toNamed(AppRoute.myfavroite);
+                },
+                trailing: const Icon(
+                  Icons.favorite_border_outlined,
+                  color: AppColor.black,
+                ),
+                title: Text(
+                  "Favorite",
+                  style: titleStyle.copyWith(fontSize: 16),
+                ),
+              ),
+              ListTile(
+                onTap: () {
                   Get.toNamed(AppRoute.orderspending);
                 },
                 trailing: const Icon(

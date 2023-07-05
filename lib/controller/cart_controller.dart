@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class CartController extends GetxController {
-  TextEditingController? controllercoupon;
+  TextEditingController? controllerCoupon;
 
   CartData cartData = CartData(Get.find());
 
@@ -91,7 +91,7 @@ class CartController extends GetxController {
     statusRequest = StatusRequest.loading;
     update();
 
-    var response = await cartData.checkCoupon(controllercoupon!.text);
+    var response = await cartData.checkCoupon(controllerCoupon!.text);
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
       // Start backend
@@ -151,7 +151,7 @@ class CartController extends GetxController {
 
   @override
   void onInit() {
-    controllercoupon = TextEditingController();
+    controllerCoupon = TextEditingController();
     view();
     super.onInit();
   }

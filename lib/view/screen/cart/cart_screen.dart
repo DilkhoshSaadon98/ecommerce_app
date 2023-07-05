@@ -3,12 +3,12 @@ import 'package:ecommercecourse/controller/cart_controller.dart';
 import 'package:ecommercecourse/core/class/handlingdataview.dart';
 import 'package:ecommercecourse/view/screen/cart/components/custom_bottom_navgationbar_cart.dart';
 import 'package:ecommercecourse/view/screen/cart/components/customitemscartlist.dart';
-import 'package:ecommercecourse/view/widget/cart/topcardCart.dart';
+import 'package:ecommercecourse/view/screen/cart/components/topcardcart.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class Cart extends StatelessWidget {
-  const Cart({Key? key}) : super(key: key);
+class CartScreen extends StatelessWidget {
+  const CartScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,12 +20,12 @@ class Cart extends StatelessWidget {
         bottomNavigationBar: GetBuilder<CartController>(
             builder: (controller) => BottomNavgationBarCart(
                 shipping: "0",
-                controllercoupon: controller.controllercoupon!,
+                controllercoupon: controller.controllerCoupon!,
                 onApplyCoupon: () {
                   controller.checkcoupon();
                 },
                 price: "${cartController.priceorders}",
-                discount: "${controller.discountcoupon}%",
+                discount: "${controller.discountcoupon}",
                 totalprice: "${controller.getTotalPrice()}")),
         body: GetBuilder<CartController>(
             builder: ((controller) => HandlingDataView(

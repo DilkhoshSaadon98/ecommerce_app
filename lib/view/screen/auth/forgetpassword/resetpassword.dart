@@ -5,10 +5,10 @@ import 'package:ecommercecourse/core/functions/validinput.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../components/custombuttonauth.dart';
-import '../components/customtextbodyauth.dart';
-import '../components/customtextformauth.dart';
-import '../components/customtexttitleauth.dart';
+import '../components/custom_button_auth.dart';
+import '../components/custom_textbody_auth.dart';
+import '../components/custom_textform_auth.dart';
+import '../components/custom_texttitle_auth.dart';
 
 class ResetPassword extends StatelessWidget {
   const ResetPassword({Key? key}) : super(key: key);

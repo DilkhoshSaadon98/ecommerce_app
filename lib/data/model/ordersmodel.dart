@@ -6,7 +6,7 @@ class OrdersModel {
   int? ordersPricedelivery;
   int? ordersPrice;
   int? ordersTotalprice;
-  int? ordersCoupon;
+  String? ordersCoupon;
   int? ordersPaymentmethod;
   int? ordersStatus;
   String? ordersDatetime;

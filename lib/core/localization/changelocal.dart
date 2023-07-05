@@ -48,7 +48,7 @@ class LocaleController extends GetxController {
   void onInit() { 
     requestPermissionNotification() ; 
     fcmconfig();
-    requestPerLocation();
+    //requestPerLocation();
     String? sharedPrefLang = myServices.sharedPreferences.getString("lang");
     if (sharedPrefLang == "ar") {
       language = const Locale("ar");

@@ -26,9 +26,7 @@ class HomeControllerImp extends HomeController {
   String? username;
   String? id;
   String? lang;
-  @override
   TextEditingController? search;
-  @override
   HomeData homeData = HomeData(Get.find());
 
   // List data = [];
@@ -61,6 +59,7 @@ class HomeControllerImp extends HomeController {
       if (response['status'] == "success") {
         categories.addAll(response['catagories']['data']);
         items.addAll(response['items']['data']);
+        print(items);
       } else {
         statusRequest = StatusRequest.failure;
       }
@@ -87,7 +86,7 @@ class SearchMixController extends GetxController {
 
   late StatusRequest statusRequest;
   HomeData homeData = HomeData(Get.find());
-  
+
   searchData() async {
     statusRequest = StatusRequest.loading;
     var response = await homeData.searchData(search!.text);

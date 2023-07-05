@@ -7,11 +7,11 @@ import 'package:ecommercecourse/core/functions/validinput.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'components/custombuttonauth.dart';
-import 'components/customtextbodyauth.dart';
-import 'components/customtextformauth.dart';
-import 'components/customtexttitleauth.dart';
-import 'components/textsignup.dart';
+import 'components/custom_button_auth.dart';
+import 'components/custom_textbody_auth.dart';
+import 'components/custom_textform_auth.dart';
+import 'components/custom_texttitle_auth.dart';
+import 'components/text_signup.dart';
 
 class SignUp extends StatelessWidget {
   const SignUp({Key? key}) : super(key: key);

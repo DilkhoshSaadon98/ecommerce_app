@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:get/get.dart';
 
-import 'components/customtextbodyauth.dart';
-import 'components/customtexttitleauth.dart';
+import 'components/custom_textbody_auth.dart';
+import 'components/custom_texttitle_auth.dart';
 
 class VerfiyCodeSignUp extends StatelessWidget {
   const VerfiyCodeSignUp({Key? key}) : super(key: key);

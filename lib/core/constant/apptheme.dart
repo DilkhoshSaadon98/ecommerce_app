@@ -4,8 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 
 ThemeData themeEnglish = ThemeData(
   fontFamily: "PlayfairDisplay",
-  floatingActionButtonTheme:
-      const FloatingActionButtonThemeData(backgroundColor: AppColor.primaryColor),
+  floatingActionButtonTheme: const FloatingActionButtonThemeData(
+      backgroundColor: AppColor.primaryColor),
   appBarTheme: AppBarTheme(
     centerTitle: true,
     elevation: 0,
@@ -47,7 +47,7 @@ ThemeData themeArabic = ThemeData(
   primarySwatch: Colors.blue,
 );
 TextStyle get titleStyle {
-  return GoogleFonts.lato(
+  return GoogleFonts.raleway(
       textStyle: const TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.w700,
@@ -61,5 +61,14 @@ TextStyle get bodyStyle {
     fontSize: 14,
     fontWeight: FontWeight.w700,
     color: AppColor.black,
+  ));
+}
+
+TextStyle get numberStyle {
+  return GoogleFonts.roboto(
+      textStyle: const TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.bold,
+    color: primaryColor,
   ));
 }

@@ -12,7 +12,7 @@ class ListItemsHome extends GetView<HomeControllerImp> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 200,
+      height: 220,
       child: ListView.builder(
           itemCount: controller.items.length,
           scrollDirection: Axis.horizontal,
@@ -38,54 +38,30 @@ class ItemsHome extends StatelessWidget {
         },
         child: Container(
           width: Get.width * .44,
-          margin: const EdgeInsets.only(right: 10, top: 30),
-          child: Card(
-            color: AppColor.backgroundcolor,
-            shape: const ContinuousRectangleBorder(
-              borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(15),
-                  bottomRight: Radius.circular(15),
-                  topLeft: Radius.circular(50),
-                  topRight: Radius.circular(50)),
-            ),
-            child: Stack(
-              clipBehavior: Clip.none,
-              children: [
-                Positioned(
-                  top: -80,
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 10, vertical: 15),
-                    margin: const EdgeInsets.symmetric(horizontal: 15),
-                    child: Image.network(
-                      "${AppLink.imagestItems}${itemsModel.itemsImage}",
-                      height: 170,
-                      width: 100,
-                    ),
-                  ),
-                ),
-                Container(
-                    alignment: Alignment.bottomCenter,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Text(
-                          "${itemsModel.itemsName}",
-                          style: bodyStyle.copyWith(
-                              color: Colors.black, fontSize: 20),
-                        ),
-                        Text(
-                          "${itemsModel.itemsPrice} \$",
-                          style: bodyStyle.copyWith(
-                              color: Colors.black, fontSize: 18),
-                        ),
-                        const SizedBox(
-                          height: 15,
-                        )
-                      ],
-                    ))
-              ],
-            ),
+          height: 220,
+          margin: const EdgeInsets.only(right: 10),
+          padding: const EdgeInsets.only(bottom: 10),
+          decoration: BoxDecoration(
+              border: Border.all(color: primaryColor, width: 1),
+              borderRadius: BorderRadius.circular(10),
+              color: AppColor.backgroundcolor),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "${itemsModel.itemsName}",
+                style: bodyStyle.copyWith(color: Colors.black, fontSize: 18),
+              ),
+              Image.network(
+                "${AppLink.imagestItems}${itemsModel.itemsImage}",
+                height: 110,
+                width: 110,
+              ),
+              Text(
+                "\$ ${itemsModel.itemsPrice} ",
+                style: bodyStyle.copyWith(color: Colors.black, fontSize: 18),
+              )
+            ],
           ),
         ),
       );

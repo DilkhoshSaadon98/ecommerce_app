@@ -5,7 +5,7 @@ import 'package:ecommercecourse/core/shared/custombutton.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../auth/components/customtextformauth.dart';
+import '../auth/components/custom_textform_auth.dart';
 
 class AddressAddDetails extends StatelessWidget {
   const AddressAddDetails({Key? key}) : super(key: key);

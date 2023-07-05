@@ -3,7 +3,6 @@ import 'package:ecommercecourse/controller/home_controller.dart';
 import 'package:ecommercecourse/core/class/handlingdataview.dart';
 import 'package:ecommercecourse/core/constant/apptheme.dart';
 import 'package:ecommercecourse/core/constant/color.dart';
-import 'package:ecommercecourse/core/constant/routes.dart';
 import 'package:ecommercecourse/data/model/items_model.dart';
 import 'package:ecommercecourse/linkapi.dart';
 import 'package:ecommercecourse/view/screen/home/components/custom_title_home.dart';
@@ -48,33 +47,6 @@ class HomePageScreen extends StatelessWidget {
                                 height: 30,
                               ),
                               Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  IconButton(
-                                      onPressed: () {
-                                        Get.toNamed(AppRoute.myfavroite);
-                                      },
-                                      icon: const Icon(
-                                        Icons.table_restaurant_outlined,
-                                        color: AppColor.primaryColor,
-                                        size: 30,
-                                      )),
-                                  IconButton(
-                                      onPressed: () {
-                                        Get.toNamed(AppRoute.myfavroite);
-                                      },
-                                      icon: const Icon(
-                                        Icons.favorite_outline,
-                                        color: AppColor.primaryColor,
-                                        size: 30,
-                                      )),
-                                ],
-                              ),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              Row(
                                 children: [
                                   Text(
                                     'Welcome, ',
@@ -87,7 +59,7 @@ class HomePageScreen extends StatelessWidget {
                                     '${controller.username!.capitalizeFirst}',
                                     style: titleStyle.copyWith(
                                         fontSize: 26,
-                                        color: AppColor.primaryColor,
+                                        color: primaryColor,
                                         height: 1),
                                   ),
                                 ],
@@ -106,10 +78,18 @@ class HomePageScreen extends StatelessWidget {
                                   controller.checkSearch(val);
                                 },
                               ),
-                              const CustomTitleHome(title: "Menu"),
+                              const CustomTitleHome(title: "Categories"),
                               const ListCategoriesHome(),
-                              const CustomTitleHome(title: "Foods for you"),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              const CustomTitleHome(title: "Products for you"),
                               const ListItemsHome(),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              const CustomTitleHome(
+                                  title: "New Arrival Products"),
                             ],
                           )
                         : ListItemsSearch(listdatamodel: controller.listdata2))
@@ -151,8 +131,11 @@ class ListItemsSearch extends GetView<HomeControllerImp> {
                     Expanded(
                         flex: 2,
                         child: ListTile(
-                          title: Text(listdatamodel[index].itemsName!),
-                          subtitle: Text(listdatamodel[index].categoriesName!),
+                          title: Text(
+                            listdatamodel[index].itemsName!,
+                            style: titleStyle,
+                          ),
+                          subtitle: Text(listdatamodel[index].catagoriesName!),
                         )),
                   ],
                 ),

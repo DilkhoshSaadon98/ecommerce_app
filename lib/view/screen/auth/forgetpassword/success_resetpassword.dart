@@ -3,7 +3,7 @@ import 'package:ecommercecourse/core/constant/color.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../components/custombuttonauth.dart';
+import '../components/custom_button_auth.dart';
 
 class SuccessResetPassword extends StatelessWidget {
   const SuccessResetPassword({Key? key}) : super(key: key);

@@ -19,7 +19,7 @@ class ItemsControllerImp extends SearchMixController {
   String? catid;
   int? selectedCat;
 
-  ItemsData testData = ItemsData(Get.find());
+  ItemsData itemData = ItemsData(Get.find());
 
   List data = [];
 
@@ -30,6 +30,7 @@ class ItemsControllerImp extends SearchMixController {
 
   @override
   void onInit() {
+    print("Items Controller CaLLLED ");
     search = TextEditingController();
     intialData();
     super.onInit();
@@ -39,6 +40,7 @@ class ItemsControllerImp extends SearchMixController {
     categories = Get.arguments['categories'];
     selectedCat = Get.arguments['selectedcat'];
     catid = Get.arguments['catid'];
+
     getItems(catid!);
   }
 
@@ -52,7 +54,7 @@ class ItemsControllerImp extends SearchMixController {
   getItems(categoryid) async {
     data.clear();
     statusRequest = StatusRequest.loading;
-    var response = await testData.getData(
+    var response = await itemData.getData(
         categoryid, myServices.sharedPreferences.getString("id")!);
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
@@ -71,38 +73,3 @@ class ItemsControllerImp extends SearchMixController {
     Get.toNamed("/productdetails", arguments: {"itemsmodel": itemsModel});
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// class FavoriteController extends GetxController {
-//   Map isFavorite = {};
-
-//   setFavorite(id, val) {
-//     isFavorite[id] = val;
-//     print(isFavorite[id]);
-//     update();
-//   }
-// }

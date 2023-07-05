@@ -1,4 +1,5 @@
 import 'package:ecommercecourse/core/class/statusrequest.dart';
+import 'package:ecommercecourse/core/constant/apptheme.dart';
 import 'package:ecommercecourse/core/constant/imgaeasset.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
@@ -17,17 +18,50 @@ class HandlingDataView extends StatelessWidget {
             alignment: Alignment.center,
             child: Lottie.asset(AppImageAsset.loading, width: 250, height: 250))
         : statusRequest == StatusRequest.offlinefailure
-            ? Center(
-                child: Lottie.asset(AppImageAsset.offline,
-                    width: 250, height: 250))
+            ? Column(
+                children: [
+                  Center(
+                      child: Lottie.asset(AppImageAsset.offline,
+                          width: 250, height: 250)),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Text(
+                    'No Internet',
+                    style: titleStyle,
+                  )
+                ],
+              )
             : statusRequest == StatusRequest.serverfailure
-                ? Center(
-                    child: Lottie.asset(AppImageAsset.server,
-                        width: 250, height: 250))
+                ? Column(
+                    children: [
+                      Center(
+                          child: Lottie.asset(AppImageAsset.server,
+                              width: 250, height: 250)),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Text(
+                        'Server Failure',
+                        style: titleStyle,
+                      )
+                    ],
+                  )
                 : statusRequest == StatusRequest.failure
-                    ? Center(
-                        child: Lottie.asset(AppImageAsset.noData,
-                            width: 250, height: 250, repeat: true))
+                    ? Column(
+                        children: [
+                          Center(
+                              child: Lottie.asset(AppImageAsset.noData,
+                                  width: 250, height: 250, repeat: true)),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          Text(
+                            'No Data',
+                            style: titleStyle,
+                          )
+                        ],
+                      )
                     : widget;
   }
 }
@@ -42,16 +76,50 @@ class HandlingDataRequest extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return statusRequest == StatusRequest.loading
-        ? Center(
-            child: Lottie.asset(AppImageAsset.loading, width: 250, height: 250))
+        ? Column(
+            children: [
+              Center(
+                  child: Lottie.asset(AppImageAsset.loading,
+                      width: 250, height: 250)),
+              const SizedBox(
+                height: 20,
+              ),
+              Text(
+                'Loading ...',
+                style: titleStyle,
+              )
+            ],
+          )
         : statusRequest == StatusRequest.offlinefailure
-            ? Center(
-                child: Lottie.asset(AppImageAsset.offline,
-                    width: 250, height: 250))
+            ? Column(
+                children: [
+                  Center(
+                      child: Lottie.asset(AppImageAsset.offline,
+                          width: 250, height: 250)),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Text(
+                    'No Internet',
+                    style: titleStyle,
+                  )
+                ],
+              )
             : statusRequest == StatusRequest.serverfailure
-                ? Center(
-                    child: Lottie.asset(AppImageAsset.server,
-                        width: 250, height: 250))
+                ? Column(
+                    children: [
+                      Center(
+                          child: Lottie.asset(AppImageAsset.server,
+                              width: 250, height: 250)),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Text(
+                        'Server Fail',
+                        style: titleStyle,
+                      )
+                    ],
+                  )
                 : widget;
   }
 }

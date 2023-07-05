@@ -72,7 +72,7 @@ class BottomNavgationBarCart extends GetView<CartController> {
                   )),
         Container(
           margin: const EdgeInsets.all(10),
-          padding: const EdgeInsets.all(10),
+          padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
           decoration: BoxDecoration(
               border: Border.all(color: AppColor.primaryColor, width: 1),
               borderRadius: BorderRadius.circular(10)),
@@ -86,8 +86,7 @@ class BottomNavgationBarCart extends GetView<CartController> {
                         style: titleStyle.copyWith(fontSize: 16))),
                 Container(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: Text("$price \$",
-                        style: titleStyle.copyWith(fontSize: 16)))
+                    child: Text("$price \$", style: numberStyle))
               ],
             ),
             Row(
@@ -99,8 +98,7 @@ class BottomNavgationBarCart extends GetView<CartController> {
                         style: titleStyle.copyWith(fontSize: 16))),
                 Container(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: Text("$discount ",
-                        style: titleStyle.copyWith(fontSize: 16)))
+                    child: Text("$discount %", style: numberStyle))
               ],
             ),
             Row(
@@ -112,13 +110,12 @@ class BottomNavgationBarCart extends GetView<CartController> {
                         style: titleStyle.copyWith(fontSize: 16))),
                 Container(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: Text("$shipping ",
-                        style: titleStyle.copyWith(fontSize: 16)))
+                    child: Text("$shipping ", style: numberStyle))
               ],
             ),
             const Divider(
               thickness: 1,
-              color: AppColor.primaryColor ,
+              color: AppColor.primaryColor,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -129,15 +126,14 @@ class BottomNavgationBarCart extends GetView<CartController> {
                         style: titleStyle.copyWith(fontSize: 16))),
                 Container(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: Text("$totalprice \$",
-                        style: titleStyle.copyWith(fontSize: 16)))
+                    child: Text("$totalprice \$", style: numberStyle))
               ],
             ),
           ]),
         ),
         const SizedBox(height: 10),
         CustomButtonCart(
-          textbutton: "Order",
+          textbutton: "Check Out",
           onPressed: () {
             controller.goToPageCheckout();
           },
