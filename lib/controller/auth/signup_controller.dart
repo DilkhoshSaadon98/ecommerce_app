@@ -19,11 +19,14 @@ class SignUpControllerImp extends SignUpController {
   late TextEditingController password;
 
    StatusRequest statusRequest = StatusRequest.none;
-
+ bool isshowpassword = true;
   SignupData signupData = SignupData(Get.find());
 
   List data = [];
-
+showPassword() {
+    isshowpassword = isshowpassword == true ? false : true;
+    update();
+  }
   @override
   signUp() async {
     if (formstate.currentState!.validate()) {

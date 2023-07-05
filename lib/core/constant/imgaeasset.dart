@@ -13,6 +13,8 @@ class AppImageAsset {
 
   static const String ecommerce = "$rootLottie/ecommerce.json"; 
   static const String login = "$rootLottie/login.json"; 
+  static const String registration = "$rootLottie/registration.json"; 
+  static const String successCreateAccount = "$rootLottie/success_create_account.json"; 
   static const String loading = "$rootLottie/cart.json";
   static const String offline = "$rootLottie/offline.json";
   static const String noData = "$rootLottie/nodata.json";

@@ -6,7 +6,7 @@ import 'package:ecommercecourse/view/screen/address/view_address.dart';
 import 'package:ecommercecourse/view/screen/auth/forgetpassword/forgetpassword.dart';
 import 'package:ecommercecourse/view/screen/auth/login_screen.dart';
 import 'package:ecommercecourse/view/screen/auth/forgetpassword/resetpassword.dart';
-import 'package:ecommercecourse/view/screen/auth/signup.dart';
+import 'package:ecommercecourse/view/screen/auth/signup_screen.dart';
 import 'package:ecommercecourse/view/screen/auth/forgetpassword/success_resetpassword.dart';
 import 'package:ecommercecourse/view/screen/auth/success_signup.dart';
 import 'package:ecommercecourse/view/screen/auth/forgetpassword/verifycode.dart';
@@ -31,7 +31,7 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: AppRoute.cart, page: () => const CartScreen()),
   //!  Auth
   GetPage(name: AppRoute.login, page: () => const LoginScreen()),
-  GetPage(name: AppRoute.signUp, page: () => const SignUp()),
+  GetPage(name: AppRoute.signUp, page: () => const SignUpScreen()),
   GetPage(name: AppRoute.forgetPassword, page: () => const ForgetPassword()),
   GetPage(name: AppRoute.verfiyCode, page: () => const VerfiyCode()),
   GetPage(name: AppRoute.resetPassword, page: () => const ResetPassword()),
