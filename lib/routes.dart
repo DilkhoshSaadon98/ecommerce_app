@@ -3,14 +3,14 @@ import 'package:ecommercecourse/core/middleware/mymiddleware.dart';
 import 'package:ecommercecourse/view/screen/address/add_address.dart';
 import 'package:ecommercecourse/view/screen/address/add_details_address.dart';
 import 'package:ecommercecourse/view/screen/address/view_address.dart';
-import 'package:ecommercecourse/view/screen/auth/forgetpassword/forgetpassword.dart';
+import 'package:ecommercecourse/view/screen/auth/forgetpassword/forget_password_screen.dart';
 import 'package:ecommercecourse/view/screen/auth/login_screen.dart';
-import 'package:ecommercecourse/view/screen/auth/forgetpassword/resetpassword.dart';
+import 'package:ecommercecourse/view/screen/auth/forgetpassword/reset_password_screen.dart';
 import 'package:ecommercecourse/view/screen/auth/signup_screen.dart';
-import 'package:ecommercecourse/view/screen/auth/forgetpassword/success_resetpassword.dart';
-import 'package:ecommercecourse/view/screen/auth/success_signup.dart';
-import 'package:ecommercecourse/view/screen/auth/forgetpassword/verifycode.dart';
-import 'package:ecommercecourse/view/screen/auth/verifycodesignup.dart';
+import 'package:ecommercecourse/view/screen/auth/forgetpassword/success_reset_password.dart';
+import 'package:ecommercecourse/view/screen/auth/success_signup_screen.dart';
+import 'package:ecommercecourse/view/screen/auth/forgetpassword/verify_code_reset_password.dart';
+import 'package:ecommercecourse/view/screen/auth/verify_code_signup.dart';
 import 'package:ecommercecourse/view/screen/cart/cart_screen.dart';
 import 'package:ecommercecourse/view/screen/checkout_screen.dart'; 
 import 'package:ecommercecourse/view/main_screen.dart';
@@ -32,8 +32,8 @@ List<GetPage<dynamic>>? routes = [
   //!  Auth
   GetPage(name: AppRoute.login, page: () => const LoginScreen()),
   GetPage(name: AppRoute.signUp, page: () => const SignUpScreen()),
-  GetPage(name: AppRoute.forgetPassword, page: () => const ForgetPassword()),
-  GetPage(name: AppRoute.verfiyCode, page: () => const VerfiyCode()),
+  GetPage(name: AppRoute.forgetPassword, page: () => const ForgetPasswordScreen()),
+  GetPage(name: AppRoute.verfiyCode, page: () => const VerfiyCodeResetPassword()),
   GetPage(name: AppRoute.resetPassword, page: () => const ResetPassword()),
   GetPage(
       name: AppRoute.successResetpassword,

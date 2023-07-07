@@ -1,6 +1,8 @@
 import 'package:ecommercecourse/controller/auth/successsignup_controller.dart';
 import 'package:ecommercecourse/core/constant/apptheme.dart';
 import 'package:ecommercecourse/core/constant/color.dart';
+import 'package:ecommercecourse/core/constant/imgaeasset.dart';
+import 'package:ecommercecourse/view/screen/auth/components/logo_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -14,34 +16,23 @@ class SuccessSignUp extends StatelessWidget {
     SuccessSignUpControllerImp controller =
         Get.put(SuccessSignUpControllerImp());
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: AppColor.backgroundcolor,
-        elevation: 0.0,
-        title: Text('32'.tr,
-            style: Theme.of(context)
-                .textTheme
-                .displayLarge!
-                .copyWith(color: AppColor.grey)),
-      ),
+      backgroundColor: AppColor.white,
       body: Container(
         padding: const EdgeInsets.all(15),
-        child: Column(children: [
+        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+          const Spacer(
+            flex: 1,
+          ),
           const Center(
-              child: Icon(
-            Icons.check_circle_outline,
-            size: 200,
-            color: AppColor.primaryColor,
-          )),
-          Text("37".tr,
-              style: titleStyle
-                  .copyWith(fontSize: 30)),
-          Text("38".tr),
+            child: LogoAuth(
+              title: AppImageAsset.successCreateAccount,
+            ),
+          ),
           const Spacer(),
           SizedBox(
             width: double.infinity,
             child: CustomButtomAuth(
-                text: "31".tr,
+                text: "Go To Login".tr,
                 onPressed: () {
                   controller.goToPageLogin();
                 }),

@@ -29,7 +29,6 @@ class SignUpScreen extends StatelessWidget {
                   child: Form(
                     key: controller.formstate,
                     child: ListView(children: [
-                      const SizedBox(height: 20),
                       const LogoAuth(
                         title: AppImageAsset.registration,
                       ),

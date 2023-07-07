@@ -7,7 +7,7 @@ class ItemsModel {
   String? itemsImage;
   int? itemsCount;
   int? itemsActive;
-  int? itemsPrice;
+  double? itemsPrice;
   int? itemsDiscount;
   int? itemsCat;
   String? itemsDate;
@@ -17,7 +17,7 @@ class ItemsModel {
   String? catagoriesImage;
   String? catagoriesDatetime;
   int? favorite;
-  String? itemsPricedisount;
+  double? itemsPricedisount;
 
   ItemsModel(
       {this.itemsId,
@@ -49,7 +49,7 @@ class ItemsModel {
     itemsImage = json['items_image'];
     itemsCount = json['items_count'];
     itemsActive = json['items_active'];
-    itemsPrice = json['items_price'];
+    itemsPrice = double.parse(json['items_price'].toString());
     itemsDiscount = json['items_discount'];
     itemsCat = json['items_cat'];
     itemsDate = json['items_date'];
@@ -59,7 +59,7 @@ class ItemsModel {
     catagoriesImage = json['catagories_image'];
     catagoriesDatetime = json['catagories_datetime'];
     favorite = json['favorite'];
-    itemsPricedisount = json['items_pricedisount'];
+    itemsPricedisount = double.parse(json['items_price'].toString());
   }
 
   Map<String, dynamic> toJson() {

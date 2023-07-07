@@ -1,65 +1,69 @@
 import 'package:ecommercecourse/controller/auth/forgetpassword/forgetpassword_controller.dart';
 import 'package:ecommercecourse/core/class/handlingdataview.dart';
 import 'package:ecommercecourse/core/constant/color.dart';
+import 'package:ecommercecourse/core/functions/validinput.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get/get_connect/http/src/utils/utils.dart';
 
 import '../components/custom_button_auth.dart';
 import '../components/custom_textbody_auth.dart';
 import '../components/custom_textform_auth.dart';
 import '../components/custom_texttitle_auth.dart';
 
-class ForgetPassword extends StatelessWidget {
-  const ForgetPassword({Key? key}) : super(key: key);
+class ForgetPasswordScreen extends StatelessWidget {
+  const ForgetPasswordScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     Get.put(ForgetPasswordControllerImp());
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: AppColor.backgroundcolor,
-        elevation: 0.0,
-        title: Text('14'.tr,
-            style: Theme.of(context)
-                .textTheme
-                .displayLarge!
-                .copyWith(color: AppColor.grey)),
-      ),
       body: GetBuilder<ForgetPasswordControllerImp>(
-          builder: (controller) =>  
-          HandlingDataRequest( statusRequest: controller.statusRequest, widget: 
-           Container(
+          builder: (controller) => HandlingDataRequest(
+              statusRequest: controller.statusRequest,
+              widget: SingleChildScrollView(
+                child: Container(
+                  height: Get.height,
                   padding:
                       const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
                   child: Form(
                     key: controller.formstate,
-                    child: ListView(children: [
-                      const SizedBox(height: 20),
-                      CustomTextTitleAuth(text: "27".tr),
+                    child: Column(mainAxisSize: MainAxisSize.max, children: [
+                      const SizedBox(height: 40),
+                      CustomTextTitleAuth(text: "Forget Password".tr),
+                      const Spacer(
+                        flex: 1,
+                      ),
+                      CustomTextTitleAuth(text: "Check Email".tr),
                       const SizedBox(height: 10),
                       CustomTextBodyAuth(
                           // please Enter Your Email Address To Recive A verification code
-                          text: "29".tr),
-                      const SizedBox(height: 15),
+                          text:
+                              "please Enter Your Email Address To Recive A verification code"
+                                  .tr),
+                      const SizedBox(height: 25),
                       CustomTextFormAuth(
                         isNumber: false,
-                        valid: (val) {},
+                        valid: (val) {
+                          return validInput(val!, 5, 100, "email");
+                        },
                         mycontroller: controller.email,
                         hinttext: "12".tr,
                         iconData: Icons.email_outlined,
-                        labeltext: "18".tr,
+                        labeltext: "E-mail".tr,
                         // mycontroller: ,
                       ),
+                      const Spacer(),
                       CustomButtomAuth(
-                          text: "30".tr,
+                          text: "Check".tr,
                           onPressed: () {
                             controller.checkemail();
                           }),
-                      const SizedBox(height: 40),
+                      const SizedBox(height: 20),
                     ]),
                   ),
-                ))),
+                ),
+              ))),
     );
   }
 }

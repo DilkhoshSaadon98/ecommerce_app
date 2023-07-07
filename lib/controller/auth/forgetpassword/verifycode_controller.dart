@@ -29,9 +29,7 @@ class VerifyCodeControllerImp extends VerifyCodeController {
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
       if (response['status'] == "success") {
-        Get.offNamed(AppRoute.resetPassword , arguments: {
-          "email" : email
-        });
+        Get.offNamed(AppRoute.resetPassword, arguments: {"email": email});
       } else {
         Get.defaultDialog(
             title: "ُWarning", middleText: "Verify Code Not Correct");

@@ -33,26 +33,31 @@ class CustomItemsCartList extends StatelessWidget {
         Expanded(
             flex: 3,
             child: ListTile(
-              title: Text(name, style: titleStyle),
-              subtitle: Text(price,
-                  style:titleStyle),
+              title: Text(name, style: numberStyle),
+              subtitle: Text(price, style: numberStyle),
             )),
         Expanded(
-            child: Column(
-          children: [
-            SizedBox(
-                height: 35,
-                child: IconButton(onPressed: onAdd, icon: const Icon(Icons.add))),
-            SizedBox(
-                height: 30,
-                child: Text(
-                  count,
-                  style: titleStyle,
-                )),
-            SizedBox(
-                height: 25,
-                child: IconButton(onPressed: onRemove, icon: const Icon(Icons.remove)))
-          ],
+            child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 10),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              SizedBox(
+                  height: 35,
+                  child: IconButton(
+                      onPressed: onAdd, icon: const Icon(Icons.add))),
+              SizedBox(
+                  height: 30,
+                  child: Text(
+                    count,
+                    style: numberStyle,
+                  )),
+              SizedBox(
+                  height: 25,
+                  child: IconButton(
+                      onPressed: onRemove, icon: const Icon(Icons.remove)))
+            ],
+          ),
         ))
       ]),
     );

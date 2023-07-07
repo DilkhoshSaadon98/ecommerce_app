@@ -1,5 +1,7 @@
+import 'package:ecommercecourse/core/constant/apptheme.dart';
 import 'package:ecommercecourse/core/constant/color.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class CustomButtomAuth extends StatelessWidget {
   final String text;
@@ -10,6 +12,7 @@ class CustomButtomAuth extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: Get.width,
       margin: const EdgeInsets.only(top: 10),
       child: MaterialButton(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
@@ -17,8 +20,7 @@ class CustomButtomAuth extends StatelessWidget {
         onPressed: onPressed,
         color: AppColor.primaryColor,
         textColor: Colors.white,
-        child: Text(text,
-            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+        child: Text(text, style: titleStyle.copyWith(color: AppColor.white)),
       ),
     );
   }

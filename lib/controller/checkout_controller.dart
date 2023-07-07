@@ -101,9 +101,12 @@ class CheckoutController extends GetxController {
 
   @override
   void onInit() {
-    couponid = Get.arguments['couponid'];
-    priceorders = Get.arguments['priceorder'];
-    coupondiscount = Get.arguments['discountcoupon'].toString();
+    // couponid = Get.arguments['couponid'];
+    // priceorders = Get.arguments['priceorder'];
+    couponid = '1';
+    priceorders = '10';
+    //coupondiscount = Get.arguments['discountcoupon'].toString();
+    coupondiscount = '0';
 
     getShippingAddress();
     super.onInit();

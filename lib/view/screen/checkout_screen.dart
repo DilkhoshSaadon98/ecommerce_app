@@ -17,7 +17,10 @@ class Checkout extends StatelessWidget {
     CheckoutController controller = Get.put(CheckoutController());
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Checkout'),
+        title: Text(
+          'Checkout',
+          style: titleStyle.copyWith(fontSize: 25),
+        ),
       ),
       bottomNavigationBar: Container(
           padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -40,7 +43,7 @@ class Checkout extends StatelessWidget {
                       Text(
                         "Choose Payment Method",
                         style: titleStyle.copyWith(
-                            color: AppColor.secondColor,
+                            color: AppColor.primaryColor,
                             fontWeight: FontWeight.bold,
                             fontSize: 20),
                       ),
@@ -70,7 +73,7 @@ class Checkout extends StatelessWidget {
                       Text(
                         "Choose Delivery Type",
                         style: titleStyle.copyWith(
-                            color: AppColor.secondColor,
+                            color: AppColor.primaryColor,
                             fontWeight: FontWeight.bold,
                             fontSize: 20),
                       ),

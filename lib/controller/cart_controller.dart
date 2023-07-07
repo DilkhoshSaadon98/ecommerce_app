@@ -56,8 +56,8 @@ class CartController extends GetxController {
     if (data.isEmpty) return Get.snackbar("تنبيه", "السله فارغه");
     Get.toNamed(AppRoute.checkout, arguments: {
       "couponid": couponid ?? "0",
-      "priceorder": priceorders.toString() , 
-      "discountcoupon" : discountcoupon.toString()
+      "priceorder": priceorders.toString(),
+      "discountcoupon": discountcoupon.toString()
     });
   }
 
@@ -106,7 +106,7 @@ class CartController extends GetxController {
         discountcoupon = 0;
         couponname = null;
         couponid = null;
-        Get.snackbar("Warning", "Coupon Not Valid") ;
+        Get.snackbar("Warning", "Coupon Not Valid");
       }
       // End
     }
@@ -132,14 +132,17 @@ class CartController extends GetxController {
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
       // Start backend
+      print(response);
       if (response['status'] == "success") {
         if (response['datacart']['status'] == 'success') {
           List dataresponse = response['datacart']['data'];
           Map dataresponsecountprice = response['countprice'];
           data.clear();
           data.addAll(dataresponse.map((e) => CartModel.fromJson(e)));
-          totalcountitems = int.parse(dataresponsecountprice['totalcount'].toString());
-          priceorders = double.parse(dataresponsecountprice['totalprice'].toString());
+          totalcountitems =
+              int.parse(dataresponsecountprice['totalcount'].toString());
+          priceorders =
+              double.parse(dataresponsecountprice['totalprice'].toString());
         }
       } else {
         statusRequest = StatusRequest.failure;
@@ -152,6 +155,7 @@ class CartController extends GetxController {
   @override
   void onInit() {
     controllerCoupon = TextEditingController();
+    print('cart called');
     view();
     super.onInit();
   }

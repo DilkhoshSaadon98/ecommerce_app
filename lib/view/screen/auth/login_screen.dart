@@ -47,12 +47,12 @@ class LoginScreen extends StatelessWidget {
                       CustomTextFormAuth(
                         isNumber: false,
                         valid: (val) {
-                          return validInput(val!, 5, 100, "email");
+                          return validInput(val!, 3, 100, "username");
                         },
                         mycontroller: controller.email,
-                        hinttext: "Email".tr,
+                        hinttext: "E-mail".tr,
                         iconData: Icons.email_outlined,
-                        labeltext: "Email".tr,
+                        labeltext: "E-mail or Username".tr,
                         // mycontroller: ,
                       ),
                       const SizedBox(height: 10),
@@ -92,7 +92,7 @@ class LoginScreen extends StatelessWidget {
                           onPressed: () {
                             controller.login();
                           }),
-                      const SizedBox(height: 40),
+                      const SizedBox(height: 15),
                       CustomTextSignUpOrSignIn(
                         textone: "Dont Have An Account ? ".tr,
                         texttwo: "Sign Up".tr,

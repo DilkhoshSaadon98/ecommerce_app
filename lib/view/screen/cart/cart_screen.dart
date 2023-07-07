@@ -12,7 +12,7 @@ class CartScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    CartController cartController = Get.put(CartController());
+    Get.put(CartController());
     return Scaffold(
         appBar: AppBar(
           title: Text("My Cart"),
@@ -24,7 +24,7 @@ class CartScreen extends StatelessWidget {
                 onApplyCoupon: () {
                   controller.checkcoupon();
                 },
-                price: "${cartController.priceorders}",
+                price: "${controller.priceorders}",
                 discount: "${controller.discountcoupon}",
                 totalprice: "${controller.getTotalPrice()}")),
         body: GetBuilder<CartController>(
@@ -35,31 +35,31 @@ class CartScreen extends StatelessWidget {
                     SizedBox(height: 10),
                     TopCardCart(
                         message:
-                            "You Have ${cartController.totalcountitems} Items in Your List"),
+                            "You Have ${controller.totalcountitems} Items in Your List"),
                     Container(
                       padding: EdgeInsets.all(10),
                       child: Column(
                         children: [
                           ...List.generate(
-                            cartController.data.length,
+                            controller.data.length,
                             (index) => CustomItemsCartList(
                                 onAdd: () async {
-                                  await cartController
-                                      .add(cartController.data[index].itemsId!.toString());
-                                  cartController.refreshPage();
+                                  await controller
+                                      .add(controller.data[index].itemsId!.toString());
+                                  controller.refreshPage();
                                 },
                                 onRemove: () async {
-                                  await cartController.delete(
-                                      cartController.data[index].itemsId!.toString());
-                                  cartController.refreshPage();
+                                  await controller.delete(
+                                      controller.data[index].itemsId!.toString());
+                                  controller.refreshPage();
                                 },
                                 imagename:
-                                    "${cartController.data[index].itemsImage}",
-                                name: "${cartController.data[index].itemsName}",
+                                    "${controller.data[index].itemsImage}",
+                                name: "${controller.data[index].itemsName}",
                                 price:
-                                    "${cartController.data[index].itemsprice} \$",
+                                    "${controller.data[index].itemsprice} \$",
                                 count:
-                                    "${cartController.data[index].countitems}"),
+                                    "${controller.data[index].countitems}"),
                           )
                         ],
                       ),

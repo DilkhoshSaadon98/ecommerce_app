@@ -1,3 +1,4 @@
+import 'package:ecommercecourse/core/constant/apptheme.dart';
 import 'package:ecommercecourse/core/constant/color.dart';
 import 'package:flutter/material.dart';
 
@@ -11,19 +12,23 @@ class CardPaymentMethodCheckout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 60,
+      alignment: Alignment.centerLeft,
       margin: const EdgeInsets.symmetric(horizontal: 10),
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+      padding: const EdgeInsets.symmetric(
+        horizontal: 10,
+      ),
       decoration: BoxDecoration(
-          color: isActive == true
-              ? const Color.fromARGB(255, 49, 182, 182)
-              : AppColor.white,
-          border: Border.all(
-              color: const Color.fromARGB(255, 49, 182, 182), width: 1),
+          color: isActive == true ? AppColor.primaryColor : AppColor.white,
+          border: Border.all(color: AppColor.primaryColor, width: 1),
           borderRadius: BorderRadius.circular(10)),
       child: Text(title,
-          style: TextStyle(
-              color: isActive == true ? Colors.white : AppColor.secondColor,
+          style: titleStyle.copyWith(
+              color: isActive == true
+                  ? AppColor.secondColor
+                  : AppColor.primaryColor,
               height: 1,
+              fontSize: 16,
               fontWeight: FontWeight.bold)),
     );
   }
