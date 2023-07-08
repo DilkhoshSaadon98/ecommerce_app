@@ -16,7 +16,7 @@ class MainScreenControllerImp extends MainScreenController {
   List<Widget> listPage = const [
     HomePageScreen(),
     CartScreen(),
-    NotificationView(),
+    NotificationScreen(),
     OffersScreen(),
     Settings()
   ];

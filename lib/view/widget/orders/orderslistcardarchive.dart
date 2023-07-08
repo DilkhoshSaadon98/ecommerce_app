@@ -2,7 +2,7 @@ import 'package:ecommercecourse/controller/orders/archive_controller.dart';
 import 'package:ecommercecourse/core/constant/color.dart';
 import 'package:ecommercecourse/core/constant/routes.dart';
 import 'package:ecommercecourse/core/functions/rating_dialog.dart';
-import 'package:ecommercecourse/data/model/ordersmodel.dart';
+import 'package:ecommercecourse/data/model/orders_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:jiffy/jiffy.dart';

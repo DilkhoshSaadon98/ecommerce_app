@@ -4,7 +4,7 @@ import 'package:ecommercecourse/core/functions/handing_data_controller.dart';
 import 'package:ecommercecourse/core/services/services.dart';
 import 'package:ecommercecourse/data/datasource/remote/address_data.dart';
 import 'package:ecommercecourse/data/datasource/remote/checkout_date.dart';
-import 'package:ecommercecourse/data/model/addressmodel.dart';
+import 'package:ecommercecourse/data/model/address_model.dart';
 import 'package:get/get.dart';
 
 class CheckoutController extends GetxController {
@@ -101,13 +101,9 @@ class CheckoutController extends GetxController {
 
   @override
   void onInit() {
-    // couponid = Get.arguments['couponid'];
-    // priceorders = Get.arguments['priceorder'];
-    couponid = '1';
-    priceorders = '10';
-    //coupondiscount = Get.arguments['discountcoupon'].toString();
-    coupondiscount = '0';
-
+    couponid = Get.arguments['couponid'];
+    priceorders = Get.arguments['priceorder'];
+    coupondiscount = Get.arguments['discountcoupon'].toString();
     getShippingAddress();
     super.onInit();
   }

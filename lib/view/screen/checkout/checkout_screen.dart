@@ -3,9 +3,9 @@ import 'package:ecommercecourse/core/class/handlingdataview.dart';
 import 'package:ecommercecourse/core/constant/apptheme.dart';
 import 'package:ecommercecourse/core/constant/color.dart';
 import 'package:ecommercecourse/core/constant/imgaeasset.dart';
-import 'package:ecommercecourse/view/widget/checkout/card_deliveery_type.dart';
-import 'package:ecommercecourse/view/widget/checkout/card_payment_method.dart';
-import 'package:ecommercecourse/view/widget/checkout/card_shipping_address.dart';
+import 'package:ecommercecourse/view/screen/checkout/components/card_deliveery_type.dart';
+import 'package:ecommercecourse/view/screen/checkout/components/card_payment_method.dart';
+import 'package:ecommercecourse/view/screen/checkout/components/card_shipping_address.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -23,15 +23,28 @@ class Checkout extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: Container(
+          height: 40,
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: MaterialButton(
-            color: AppColor.secondColor,
+            color: primaryColor,
             textColor: Colors.white,
             onPressed: () {
               controller.checkout();
             },
-            child: const Text("Checkout",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text("Checkout",
+                    style: titleStyle.copyWith(color: AppColor.white)),
+                const SizedBox(
+                  width: 10,
+                ),
+                const Icon(
+                  Icons.check,
+                  color: AppColor.white,
+                )
+              ],
+            ),
           )),
       body: GetBuilder<CheckoutController>(
           builder: (controller) => HandlingDataView(
@@ -41,7 +54,7 @@ class Checkout extends StatelessWidget {
                   child: ListView(
                     children: [
                       Text(
-                        "Choose Payment Method",
+                        "Choose Payment Method:",
                         style: titleStyle.copyWith(
                             color: AppColor.primaryColor,
                             fontWeight: FontWeight.bold,
@@ -115,11 +128,11 @@ class Checkout extends StatelessWidget {
                             Text(
                               "Shipping Address",
                               style: titleStyle.copyWith(
-                                  color: AppColor.secondColor,
+                                  color: primaryColor,
                                   fontWeight: FontWeight.bold,
                                   fontSize: 20),
                             ),
-                            const SizedBox(height: 10),
+                            const SizedBox(height: 5),
                             ...List.generate(
                               controller.dataaddress.length,
                               (index) => InkWell(

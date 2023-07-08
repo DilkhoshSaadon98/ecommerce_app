@@ -2,8 +2,8 @@ import 'dart:async';
 import 'package:ecommercecourse/core/class/statusrequest.dart';
 import 'package:ecommercecourse/core/functions/handing_data_controller.dart';
 import 'package:ecommercecourse/data/datasource/remote/orders/details_data.dart';
-import 'package:ecommercecourse/data/model/cartmodel.dart';
-import 'package:ecommercecourse/data/model/ordersmodel.dart';
+import 'package:ecommercecourse/data/model/cart_model.dart';
+import 'package:ecommercecourse/data/model/orders_model.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 

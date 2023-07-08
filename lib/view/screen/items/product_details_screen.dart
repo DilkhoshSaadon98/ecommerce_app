@@ -4,7 +4,6 @@ import 'package:ecommercecourse/core/constant/apptheme.dart';
 import 'package:ecommercecourse/core/constant/color.dart';
 import 'package:ecommercecourse/core/constant/routes.dart';
 import 'package:ecommercecourse/view/widget/productdetails/price_and_count.dart';
-import 'package:ecommercecourse/view/widget/productdetails/subitemslist.dart';
 import 'package:ecommercecourse/view/widget/productdetails/toppageproductdetails.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -17,6 +16,17 @@ class ProductDetails extends GetView<ProductDetailsControllerImp> {
     Get.put(ProductDetailsControllerImp());
 
     return Scaffold(
+        appBar: AppBar(
+          backgroundColor: AppColor.white,
+          leading: IconButton(
+              icon: const Icon(
+                Icons.arrow_back_ios_new,
+                color: primaryColor,
+              ),
+              onPressed: () {
+                Get.back();
+              }),
+        ),
         bottomNavigationBar: Container(
             margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
             height: 40,
@@ -27,14 +37,14 @@ class ProductDetails extends GetView<ProductDetailsControllerImp> {
                 onPressed: () {
                   Get.toNamed(AppRoute.cart);
                 },
-                child: const Text(
+                child: Text(
                   "Go To Cart",
-                  style: TextStyle(
+                  style: titleStyle.copyWith(
                       color: Colors.white, fontWeight: FontWeight.bold),
                 ))),
         body: GetBuilder<ProductDetailsControllerImp>(
             builder: (controller) => ListView(children: [
-              //! Product Header 
+                  //! Product Header
                   const TopProductPageDetails(),
                   const SizedBox(
                     height: 100,
@@ -47,8 +57,9 @@ class ProductDetails extends GetView<ProductDetailsControllerImp> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text("${controller.itemsModel.itemsName}",
-                                  style: titleStyle.copyWith(
+                                  style: numberStyle.copyWith(
                                     fontSize: 20,
+                                    fontWeight: FontWeight.bold,
                                     color: AppColor.fourthColor,
                                   )),
                               const SizedBox(height: 10),

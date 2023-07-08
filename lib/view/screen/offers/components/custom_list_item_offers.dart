@@ -19,10 +19,19 @@ class CustomListItemsOffers extends GetView<OffersController> {
   @override
   Widget build(BuildContext context) {
     // bool isDiscount = offersModel.itemsDiscount == 0 ? true : false;
-    return Container(
-      height: 300,
-      padding: const EdgeInsets.symmetric(vertical: 10),
-      child: Card(
+    
+        Get.put(OffersController());
+    return GestureDetector(
+      onTap: () {
+       // controller.goToPageOffersProductDetails(offersModel[itemIndex]);
+      },
+      child: Container(
+        height: 250,
+        decoration: BoxDecoration(
+            color: AppColor.backgroundcolor,
+            border: Border.all(color: primaryColor),
+            borderRadius: BorderRadius.circular(5)),
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
         child: Stack(
           children: [
             Padding(
@@ -45,30 +54,30 @@ class CustomListItemsOffers extends GetView<OffersController> {
                         translateDatabase(
                             offersModel[itemIndex]['items_name_ar'],
                             offersModel[itemIndex]['items_name']),
-                        style: const TextStyle(
-                            color: AppColor.black,
+                        style: numberStyle.copyWith(
+                            color: primaryColor,
                             fontSize: 16,
                             fontWeight: FontWeight.bold)),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const Text("Rating", textAlign: TextAlign.center),
-                        Container(
-                          alignment: Alignment.bottomCenter,
-                          height: 22,
-                          child: Row(
-                            children: [
-                              ...List.generate(
-                                  5,
-                                  (index) => const Icon(
-                                        Icons.star,
-                                        size: 15,
-                                      ))
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
+                    // Row(
+                    //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    //   children: [
+                    //     const Text("Rating", textAlign: TextAlign.center),
+                    //     Container(
+                    //       alignment: Alignment.bottomCenter,
+                    //       height: 22,
+                    //       child: Row(
+                    //         children: [
+                    //           ...List.generate(
+                    //               5,
+                    //               (index) => const Icon(
+                    //                     Icons.star,
+                    //                     size: 15,
+                    //                   ))
+                    //         ],
+                    //       ),
+                    //     )
+                    //   ],
+                    // ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -76,7 +85,6 @@ class CustomListItemsOffers extends GetView<OffersController> {
                           height: 40,
                           child: Stack(
                             children: [
-                              //{offersModel.itemsPriceDiscount}
                               Text(
                                   "${offersModel[itemIndex]['itemspricedisount']} \$",
                                   style: titleStyle.copyWith(
@@ -142,7 +150,7 @@ class CustomListItemsOffers extends GetView<OffersController> {
                     left: 4,
                     child: Image.asset(
                       AppImageAsset.saleOne,
-                      width: 30,
+                      width: 40,
                     ))
                 : Container()
           ],

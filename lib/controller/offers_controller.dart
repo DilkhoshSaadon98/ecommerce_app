@@ -1,5 +1,6 @@
 import 'package:ecommercecourse/controller/home_controller.dart';
 import 'package:ecommercecourse/core/class/statusrequest.dart';
+import 'package:ecommercecourse/core/constant/routes.dart';
 import 'package:ecommercecourse/core/functions/handing_data_controller.dart';
 import 'package:ecommercecourse/data/datasource/remote/offers_data.dart';
 import 'package:flutter/widgets.dart';
@@ -30,8 +31,8 @@ class OffersController extends SearchMixController {
     update();
   }
 
-  goToPageProductDetails(itemsModel) {
-    Get.toNamed("/productdetails", arguments: {"itemsmodel": itemsModel});
+  goToPageOffersProductDetails(offersModel) {
+    Get.toNamed(AppRoute.offersProductDetails, arguments: {"offersModel": offersModel});
   }
 
   @override

@@ -61,6 +61,7 @@ class ItemsControllerImp extends SearchMixController {
       // Start backend
       if (response['status'] == "success") {
         data.addAll(response['data']);
+        print(data[0]['items_pricedisount']);
       } else {
         statusRequest = StatusRequest.failure;
       }

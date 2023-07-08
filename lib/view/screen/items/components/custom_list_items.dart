@@ -74,28 +74,29 @@ class CustomListItems extends GetView<ItemsControllerImp> {
                         children: [
                           SizedBox(
                             height: 40,
-                            child: Stack(
-                              children: [
-                                Text("${itemsModel.itemsPrice} \$",
-                                    style: titleStyle.copyWith(
-                                      color: AppColor.primaryColor,
-                                    )),
-                                isDiscount != true
-                                    ? Positioned(
-                                        bottom: -5,
+                            child: itemsModel.itemsDiscount == 0
+                                ? Text("${itemsModel.itemsPrice} \$",
+                                          style: numberStyle.copyWith(
+                                            color: AppColor.primaryColor,
+                                          ))
+                                : Stack(
+                                    children: [
+                                      Text("${itemsModel.itemsPrice} \$",
+                                          style: numberStyle.copyWith(
+                                            color: AppColor.primaryColor,
+                                          )),
+                                      Positioned(
+                                        bottom: -7,
                                         child: Text(
                                             "${itemsModel.itemsPrice} \$",
-                                            style: titleStyle.copyWith(
+                                            style: numberStyle.copyWith(
                                                 color: isDiscount != true
                                                     ? Colors.red
                                                     : AppColor.black,
-                                                decoration: isDiscount != true
-                                                    ? TextDecoration.lineThrough
-                                                    : TextDecoration.none)),
+                                                decoration:  TextDecoration.lineThrough)),
                                       )
-                                    : Container()
-                              ],
-                            ),
+                                    ],
+                                  ),
                           ),
                           GetBuilder<FavoriteController>(
                               builder: (controller) => IconButton(

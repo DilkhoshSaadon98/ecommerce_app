@@ -19,9 +19,9 @@ class CardDeliveryTypeCheckout extends StatelessWidget {
       height: 120,
       width: 120,
       decoration: BoxDecoration(
-          color: active ? const Color.fromARGB(255, 49, 182, 182) : null,
+          color: active ? primaryColor : null,
           borderRadius: BorderRadius.circular(10),
-          border: Border.all(color: const Color.fromARGB(255, 49, 182, 182))),
+          border: Border.all(color: primaryColor)),
       child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
         Image.asset(
           imagename,
@@ -30,7 +30,7 @@ class CardDeliveryTypeCheckout extends StatelessWidget {
         Text(
           title,
           style: titleStyle.copyWith(
-              color: active ? Colors.white : AppColor.secondColor,
+              color: active ? AppColor.secondColor : primaryColor,
               fontWeight: FontWeight.bold),
         )
       ]),

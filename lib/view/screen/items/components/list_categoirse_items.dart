@@ -1,4 +1,5 @@
 import 'package:ecommercecourse/controller/items_controller.dart';
+import 'package:ecommercecourse/core/constant/apptheme.dart';
 import 'package:ecommercecourse/core/constant/color.dart';
 import 'package:ecommercecourse/core/functions/translatefatabase.dart';
 import 'package:ecommercecourse/data/model/categories_model.dart';
@@ -45,17 +46,25 @@ class Categories extends GetView<ItemsControllerImp> {
         children: [
           GetBuilder<ItemsControllerImp>(
               builder: (controller) => Container(
-                    padding:const  EdgeInsets.only(right: 10, left: 10, bottom: 5),
+                    padding:
+                        const EdgeInsets.only(right: 10, left: 10, bottom: 2),
                     decoration: controller.selectedCat == i
-                        ?const BoxDecoration(
+                        ? BoxDecoration(
                             border: Border(
                                 bottom: BorderSide(
-                                    width: 3, color: AppColor.primaryColor)))
+                                    width: 2,
+                                    color: controller.selectedCat == i
+                                        ? AppColor.secondColor
+                                        : AppColor.primaryColor)))
                         : null,
                     child: Text(
                       "${translateDatabase(categoriesModel.catagoriesNamaAr, categoriesModel.catagoriesName)}",
-                      style:
-                          const TextStyle(fontSize: 20, color: AppColor.grey2),
+                      style: titleStyle.copyWith(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w500,
+                          color: controller.selectedCat == i
+                              ? AppColor.secondColor
+                              : AppColor.primaryColor),
                     ),
                   ))
         ],

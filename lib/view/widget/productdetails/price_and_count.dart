@@ -33,7 +33,7 @@ class PriceAndCountItems extends StatelessWidget {
                 width: 50,
                 child: Text(
                   count,
-                  style: titleStyle.copyWith(fontSize: 20, height: 1.1),
+                  style: numberStyle.copyWith(fontSize: 20, height: 1.1),
                 )),
             IconButton(
                 onPressed: onRemove,
@@ -43,7 +43,7 @@ class PriceAndCountItems extends StatelessWidget {
                 )),
             const Spacer(),
             Text("$price \$",
-                style: titleStyle.copyWith(
+                style: numberStyle.copyWith(
                   fontSize: 20,
                   color: AppColor.primaryColor,
                 ))
@@ -54,13 +54,13 @@ class PriceAndCountItems extends StatelessWidget {
           children: [
             Text(
               'Total Price',
-              style: titleStyle.copyWith(
+              style: numberStyle.copyWith(
                 fontSize: 20,
                 color: AppColor.black,
               ),
             ),
             Text('$totalPrice \$',
-                style: titleStyle.copyWith(
+                style: numberStyle.copyWith(
                   fontSize: 20,
                   color: AppColor.primaryColor,
                 ))

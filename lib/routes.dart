@@ -12,17 +12,16 @@ import 'package:ecommercecourse/view/screen/auth/success_signup_screen.dart';
 import 'package:ecommercecourse/view/screen/auth/forgetpassword/verify_code_reset_password.dart';
 import 'package:ecommercecourse/view/screen/auth/verify_code_signup.dart';
 import 'package:ecommercecourse/view/screen/cart/cart_screen.dart';
-import 'package:ecommercecourse/view/screen/checkout_screen.dart'; 
+import 'package:ecommercecourse/view/screen/checkout/checkout_screen.dart'; 
 import 'package:ecommercecourse/view/main_screen.dart';
-import 'package:ecommercecourse/view/screen/items_screen.dart';
+import 'package:ecommercecourse/view/screen/items/items_screen.dart';
 import 'package:ecommercecourse/view/screen/language.dart';
 import 'package:ecommercecourse/view/screen/offers/offers_screen.dart';
 import 'package:ecommercecourse/view/screen/myfavorite.dart';
 import 'package:ecommercecourse/view/screen/on_boarding/onboarding.dart';
-import 'package:ecommercecourse/view/screen/orders/archive_screen.dart';
 import 'package:ecommercecourse/view/screen/orders/details_screen.dart';
 import 'package:ecommercecourse/view/screen/orders/pending_screen.dart';
-import 'package:ecommercecourse/view/screen/product_details_screen.dart';
+import 'package:ecommercecourse/view/screen/items/product_details_screen.dart';
 import 'package:get/get.dart';
 
 List<GetPage<dynamic>>? routes = [
@@ -47,13 +46,14 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: AppRoute.homepage, page: () => const MainScreen()),
   GetPage(name: AppRoute.items, page: () => const ItemsScreen()),
   GetPage(name: AppRoute.productdetails, page: () => const ProductDetails()),
+  GetPage(name: AppRoute.productdetails, page: () => const ProductDetails()),
   GetPage(name: AppRoute.myfavroite, page: () => const MyFavorite()),
   //
   GetPage(name: AppRoute.addressview, page: () => const AddressView()),
   GetPage(name: AppRoute.addressadd, page: () => const AddressAdd()),
   GetPage(name: AppRoute.checkout, page: () => const Checkout()),
   GetPage(name: AppRoute.orderspending, page: () => const OrdersPending()),
-  GetPage(name: AppRoute.ordersarchive, page: () => const OrdersArchiveView()),
+  //GetPage(name: AppRoute.offersProductDetails, page: () => const OffersProductDetails()),
   GetPage(name: AppRoute.ordersdetails, page: () => const OrdersDetails()),
   GetPage(
       name: AppRoute.addressadddetails, page: () => const AddressAddDetails()), 

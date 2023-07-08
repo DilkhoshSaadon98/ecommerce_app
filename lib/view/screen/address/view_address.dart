@@ -1,7 +1,7 @@
 import 'package:ecommercecourse/controller/address/view_controller.dart';
 import 'package:ecommercecourse/core/class/handlingdataview.dart';
 import 'package:ecommercecourse/core/constant/routes.dart';
-import 'package:ecommercecourse/data/model/addressmodel.dart';
+import 'package:ecommercecourse/data/model/address_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

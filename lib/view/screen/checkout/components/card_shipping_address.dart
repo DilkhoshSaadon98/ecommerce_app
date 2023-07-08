@@ -1,4 +1,5 @@
 import 'package:ecommercecourse/core/constant/apptheme.dart';
+import 'package:ecommercecourse/core/constant/color.dart';
 import 'package:flutter/material.dart';
 
 class CardShppingAddressCheckout extends StatelessWidget {
@@ -15,22 +16,22 @@ class CardShppingAddressCheckout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: isactive ? const Color.fromARGB(255, 49, 182, 182) : Colors.white,
+      color: isactive ? primaryColor : Colors.white,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       child: ListTile(
         leading: Icon(
           Icons.location_on,
-          color: isactive ? Colors.white : Colors.black,
+          color: isactive ? AppColor.secondColor : primaryColor,
         ),
         title: Text(title,
             style: titleStyle.copyWith(
-                fontSize: 18,
-                color: isactive ? Colors.white : null,
+                fontSize: 16,
+                color: isactive ? AppColor.secondColor : null,
                 fontWeight: FontWeight.w700)),
         subtitle: Text(body,
             style: titleStyle.copyWith(
-                fontSize: 14,
-                color: isactive ? Colors.white : null,
+                fontSize: 12,
+                color: isactive ? AppColor.secondColor : null,
                 fontWeight: FontWeight.w100)),
       ),
     );

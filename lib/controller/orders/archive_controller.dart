@@ -3,7 +3,7 @@ import 'package:ecommercecourse/core/functions/handing_data_controller.dart';
 import 'package:ecommercecourse/core/services/services.dart';
 import 'package:ecommercecourse/data/datasource/remote/orders/archive_data.dart';
 import 'package:ecommercecourse/data/datasource/remote/rating_data.dart';
-import 'package:ecommercecourse/data/model/ordersmodel.dart';
+import 'package:ecommercecourse/data/model/orders_model.dart';
 import 'package:get/get.dart';
 
 class OrdersArchiveController extends GetxController {

@@ -1,12 +1,13 @@
 import 'package:ecommercecourse/controller/notification_controller.dart';
 import 'package:ecommercecourse/core/class/handlingdataview.dart';
+import 'package:ecommercecourse/core/constant/apptheme.dart';
 import 'package:ecommercecourse/core/constant/color.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:jiffy/jiffy.dart';
 
-class NotificationView extends StatelessWidget {
-  const NotificationView({super.key});
+class NotificationScreen extends StatelessWidget {
+  const NotificationScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,36 +18,48 @@ class NotificationView extends StatelessWidget {
             widget: Container(
                 padding: const EdgeInsets.all(10),
                 child: ListView(children: [
-                  const Center(
+                  Center(
                       child: Text(
-                    "Notification",
-                    style: TextStyle(
-                        fontSize: 18,
+                    "Notifications",
+                    style: titleStyle.copyWith(
+                        fontSize: 25,
                         color: AppColor.primaryColor,
                         fontWeight: FontWeight.bold),
                   )),
-                  const SizedBox(height: 10),
+                  const SizedBox(height: 20),
                   ...List.generate(
                       controller.data.length,
                       (index) => Container(
+                            height: 80,
                             margin: const EdgeInsets.symmetric(vertical: 5),
+                            padding: const EdgeInsets.only(right: 5),
+                            decoration: BoxDecoration(
+                                border: Border.all(color: primaryColor),
+                                borderRadius: BorderRadius.circular(10)),
                             child: Stack(
                               children: [
                                 ListTile(
                                   leading: IconButton(
                                     onPressed: () {
-                                      controller.deleteNotification(controller.data[index]
-                                      ['notification_id']);
+                                      controller.deleteNotification(controller
+                                          .data[index]['notification_id']);
                                     },
                                     icon: const Icon(
                                       Icons.remove_circle_outline,
                                       color: Colors.red,
                                     ),
                                   ),
-                                  title: Text(controller.data[index]
-                                      ['notification_title']),
-                                  subtitle: Text(controller.data[index]
-                                      ['notification_body']),
+                                  title: Text(
+                                    controller.data[index]
+                                        ['notification_title'],
+                                    style: titleStyle.copyWith(
+                                        color: primaryColor, fontSize: 16),
+                                  ),
+                                  subtitle: Text(
+                                      controller.data[index]
+                                          ['notification_body'],
+                                      style: bodyStyle.copyWith(
+                                          color: primaryColor, fontSize: 14)),
                                 ),
                                 Positioned(
                                     right: 5,
@@ -55,8 +68,10 @@ class NotificationView extends StatelessWidget {
                                               controller.data[index]
                                                   ['notification_datetime'],
                                               "yyyy-MM-dd")
-                                          .fromNow(),
-                                      style: const TextStyle(
+                                          .fromNow()
+                                          .toString()
+                                          .capitalize!,
+                                      style: titleStyle.copyWith(
                                           color: AppColor.primaryColor,
                                           fontWeight: FontWeight.bold),
                                     ))

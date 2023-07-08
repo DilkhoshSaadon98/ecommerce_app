@@ -3,8 +3,8 @@ import 'package:ecommercecourse/core/constant/routes.dart';
 import 'package:ecommercecourse/core/functions/handing_data_controller.dart';
 import 'package:ecommercecourse/core/services/services.dart';
 import 'package:ecommercecourse/data/datasource/remote/cart_data.dart';
-import 'package:ecommercecourse/data/model/cartmodel.dart';
-import 'package:ecommercecourse/data/model/couponmodel.dart';
+import 'package:ecommercecourse/data/model/cart_model.dart';
+import 'package:ecommercecourse/data/model/coupon_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

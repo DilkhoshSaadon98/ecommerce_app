@@ -12,7 +12,7 @@ class CardPaymentMethodCheckout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 60,
+      height: 50,
       alignment: Alignment.centerLeft,
       margin: const EdgeInsets.symmetric(horizontal: 10),
       padding: const EdgeInsets.symmetric(

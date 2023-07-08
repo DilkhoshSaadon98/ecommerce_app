@@ -51,7 +51,7 @@ TextStyle get titleStyle {
       textStyle: const TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.w700,
-    color: AppColor.black,
+    color: AppColor.primaryColor,
   ));
 }
 
@@ -59,7 +59,7 @@ TextStyle get bodyStyle {
   return GoogleFonts.raleway(
       textStyle: const TextStyle(
     fontSize: 14,
-    fontWeight: FontWeight.w700,
+    fontWeight: FontWeight.w400,
     color: AppColor.black,
   ));
 }

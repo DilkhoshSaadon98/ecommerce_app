@@ -2,7 +2,7 @@ import 'package:ecommercecourse/core/class/statusrequest.dart';
 import 'package:ecommercecourse/core/functions/handing_data_controller.dart';
 import 'package:ecommercecourse/core/services/services.dart';
 import 'package:ecommercecourse/data/datasource/remote/address_data.dart';
-import 'package:ecommercecourse/data/model/addressmodel.dart';
+import 'package:ecommercecourse/data/model/address_model.dart';
 import 'package:get/get.dart';
 
 class AddressViewController extends GetxController {
@@ -16,7 +16,7 @@ class AddressViewController extends GetxController {
 
   deleteAddress(String addressid) {
     addressData.deleteData(addressid);
-    data.removeWhere((element) => element.addressId == addressid);
+    data.removeWhere((element) => element.addressId == {addressid});
     update();
   }
 
