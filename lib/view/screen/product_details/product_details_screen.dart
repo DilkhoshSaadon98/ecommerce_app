@@ -3,8 +3,8 @@ import 'package:ecommercecourse/core/class/handlingdataview.dart';
 import 'package:ecommercecourse/core/constant/apptheme.dart';
 import 'package:ecommercecourse/core/constant/color.dart';
 import 'package:ecommercecourse/core/constant/routes.dart';
-import 'package:ecommercecourse/view/widget/productdetails/price_and_count.dart';
-import 'package:ecommercecourse/view/widget/productdetails/toppageproductdetails.dart';
+import 'package:ecommercecourse/view/screen/product_details/components/price_and_count.dart';
+import 'package:ecommercecourse/view/screen/product_details/components/top_page_product_details.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

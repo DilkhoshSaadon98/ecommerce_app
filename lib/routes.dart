@@ -17,11 +17,11 @@ import 'package:ecommercecourse/view/main_screen.dart';
 import 'package:ecommercecourse/view/screen/items/items_screen.dart';
 import 'package:ecommercecourse/view/screen/language.dart';
 import 'package:ecommercecourse/view/screen/offers/offers_screen.dart';
-import 'package:ecommercecourse/view/screen/myfavorite.dart';
+import 'package:ecommercecourse/view/screen/favorite/myfavorite.dart';
 import 'package:ecommercecourse/view/screen/on_boarding/onboarding.dart';
 import 'package:ecommercecourse/view/screen/orders/details_screen.dart';
 import 'package:ecommercecourse/view/screen/orders/pending_screen.dart';
-import 'package:ecommercecourse/view/screen/items/product_details_screen.dart';
+import 'package:ecommercecourse/view/screen/product_details/product_details_screen.dart';
 import 'package:get/get.dart';
 
 List<GetPage<dynamic>>? routes = [

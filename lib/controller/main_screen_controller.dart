@@ -11,7 +11,7 @@ abstract class MainScreenController extends GetxController {
 }
 
 class MainScreenControllerImp extends MainScreenController {
-  int currentpage = 0;
+  int currentpage = 4;
 
   List<Widget> listPage = const [
     HomePageScreen(),
